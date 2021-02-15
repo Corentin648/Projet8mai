@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './TopBar.css';
+import {Link} from "react-router-dom";
 
 class TopBar extends Component {
 
@@ -9,7 +10,7 @@ class TopBar extends Component {
             activeTab: "HomeTab"
         }
 
-        localStorage.clear();
+        //localStorage.clear();
         const state = localStorage.getItem('state');
         if (state) {
             this.state = JSON.parse(state);
@@ -28,8 +29,8 @@ class TopBar extends Component {
         const appTopBar = (
             <div id="render">
                 <div className="navbar" id="myTopNav">
-                    <a id="HomeTab" onClick={() => this.setActiveTab(document.getElementById("HomeTab"))}>Home</a>
-                    <a id="NewsTab" onClick={() => this.setActiveTab(document.getElementById("NewsTab"))}>News</a>
+                    <Link id="HomeTab" to="/" onClick={() => this.setActiveTab(document.getElementById("HomeTab"))}>Home</Link>
+                    <Link to="/casson2021" id="Casson2021Tab" onClick={() => this.setActiveTab(document.getElementById("Casson2021Tab"))}>Casson 2021</Link>
                     <div className="dropdown">
                         <button className="dropbtn">Dropdown
                             <i className="fa fa-caret-down"/>
