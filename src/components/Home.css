@@ -1,0 +1,12 @@
+#HomePage {
+/* The image used */
+background-image: url("../images/IMG_3608.jpg");
+
+/* Full height */
+height: 40vw;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
