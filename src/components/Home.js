@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import './Home.css';
-
+import background from "../images/IMG_3608.jpg";
+import background2 from "../images/IMG_3628.jpg";
 
 class Home extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            backgroundImage: "../images/IMG_3628.jpg"
+            backgroundImage: "",
+            mounted: false
         }
     }
 
@@ -20,67 +22,67 @@ class Home extends Component {
             });*/
     }
 
-    reloadCss = () =>
-    {
-        var links = document.getElementsByTagName("link");
-        for (var cl in links)
-        {
-            var link = links[cl];
-            if (link.rel === "stylesheet")
-                link.href += "";
-        }
-    }
-
 
     componentDidMount() {
 
         let animationFrameId;
-        const FPS = 10;
+        const FPS = 0.5;    // changing background image every 10 sec
         const delay = 1000/FPS;
         let previous = 0;
 
-        let images = ["../images/IMG_3608.jpg", "../images/IMG_3628.jpg"];
+        let images = [`url(${background})`, `url(${background2})`];
         let nextImage = 0;
 
-        const render = (image) => {
-            if (image >= images.length) {
-                image = 0;
-            }
-            //document.getElementById("HomePage").style.backgroundImage = 'url("' + images[image] + '")';
+        const render = () => {
 
-            this.reloadCss();
+            animationFrameId = window.requestAnimationFrame(render);
 
-            this.setState({
-                backgroundImage: 'url("' + images[image] + '")'
-            }, () => {});
-
-            console.log(document.getElementById("HomePage").style.backgroundImage);
-
-            //animationFrameId = window.requestAnimationFrame(render);
             const now = Date.now();
+            console.log(now);
             if (now - previous < delay) {
                 return;
             }
             previous = now;
+
+            if (nextImage >= images.length - 1) {
+                nextImage = 0;
+            } else {
+                nextImage++;
+            }
+
+            this.setState({
+                backgroundImage: images[nextImage]
+            });
         }
 
-        render(nextImage);
+        render();
 
-        nextImage++;
 
-        /*
+        this.setState({
+            mounted: true
+        });
+
+
         return () => {
             window.cancelAnimationFrame(animationFrameId);
-        }*/
-
+        }
 
     }
 
 
     render() {
 
+        // TODO : revoir le cadrage pour les petits écrans
+        const imageHeight = this.state.mounted ? window.screen.availHeight - (window.outerHeight - window.innerHeight) - this.props.carRef.current.offsetHeight - 2: 0;
+
+        const backgroundImg = this.state.mounted ? this.state.backgroundImage : 0;
+
+        const transition = this.state.mounted ? "width 0.5s, height 0.5s, opacity 0.5s 0.5s" : 0;
+
         return (
-            <div id={"HomePage"} style={{backgroundImage: this.state.backgroundImage}}/>
+            <div className={"fadeIn"} id={"HomePage"} style={{transition: transition, backgroundImage: backgroundImg, height: imageHeight}}>
+
+            </div>
         );
     }
 }

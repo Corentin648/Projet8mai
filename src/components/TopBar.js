@@ -28,7 +28,7 @@ class TopBar extends Component {
 
         const appTopBar = (
             <div id="render">
-                <div className="navbar" id="myTopNav">
+                <div className="navbar" id="myTopNav" ref={this.props.carRef}>
                     <Link id="HomeTab" to="/" onClick={() => this.setActiveTab(document.getElementById("HomeTab"))}>Home</Link>
                     <Link to="/casson2021" id="Casson2021Tab" onClick={() => this.setActiveTab(document.getElementById("Casson2021Tab"))}>Casson 2021</Link>
                     <div className="dropdown">
@@ -41,7 +41,7 @@ class TopBar extends Component {
                             <a href="#">Link 3</a>
                         </div>
                     </div>
-                    <a href="javascript:void(0);" className="icon" onClick = {() => this.handleOnClickToggle()}>
+                    <a href="#" className="icon" onClick = {() => this.handleOnClickToggle()}>
                         <i className="fa fa-bars"/>
                     </a>
 
