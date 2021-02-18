@@ -34,25 +34,10 @@ class Home extends Component {
     handlerGoToDescription = () => {
         const element = document.getElementById("leBonLorem");
         element.scrollIntoView({ block: "start", behavior: "smooth", inline: "nearest"});
-        element.scrollIntoView(true);
-        //element.scrollIntoView({block: "start"});
-        element.scrollIntoView({behavior: "smooth"});
     }
 
 
     componentDidMount() {
-
-        console.log(window.location.href);
-
-        if (this.$ref && window.location.href.includes("#leBonLorem")) {
-            console.log("OK");
-            this.$ref.scrollIntoView({
-                // optional params
-                behavior: 'smooth',
-                block: 'start',
-                inline: 'center',
-            });
-        }
 
         let animationFrameId;
         const FPS = 0.5;    // changing background image every 10 sec
@@ -117,9 +102,16 @@ class Home extends Component {
                             <img id={"logoAsso"} style={{
                             }}
                                  src={"http://placehold.it/350x350"} alt={""}/>
-                            <h4 style={{fontSize: "30px"}}>Casson J-...</h4>
-                            <button style={{marginLeft: "30px"}} onClick={() => this.handlerDownloadInscriptionForm()}>Formulaire d'inscription</button>
-                            <button style={{marginLeft: "30px"}} onClick={() => this.handlerGoToDescription()}>Découvrir l'asso</button>
+                        </div>
+                        <h4 style={{fontSize: "30px"}}>Casson J-...</h4>
+                        <div>
+                            <button id={"InscriptionFormButton"} onClick={() => this.handlerDownloadInscriptionForm()}>Formulaire d'inscription</button>
+                        </div>
+                        <div>
+                            <button id={"DiscoverAssoButton"} onClick={() => this.handlerGoToDescription()}>
+                                <div>Découvrir l'asso</div>
+                                <i className="fa fa-caret-down"/>
+                            </button>
                         </div>
                     </div>
                 </div>
