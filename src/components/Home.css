@@ -1,17 +1,43 @@
 #HomePage {
-    /* The image used */
-    /*background-image: url("../images/IMG_3608.jpg");
 
-    /* Full height */
+    /* This line is here for preventing margin-top bug w*/
+    border: 1px solid;
 
-
-    border: 1px solid red;
+    /* Place the presenting card in the middle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     /* Center and scale the image nicely */
+    /* TODO : have to add -webkit-... for Chrome and Safari */
+    background: url("../images/IMG_3608.jpg");
+    background-repeat:  no-repeat;
     background-position: center;
-    background-repeat: no-repeat;
+    background-attachment: local;
     background-size: cover;
+
+    /* TODO : make the blurry effect work */
+    /* Add blurry */
+    /*-webkit-filter: blur(3px); /* Safari 6.0 - 9.0 */
+    /*filter: blur(3px);*/
+
+    /* Add transition when sliding*/
+    /*TODO : make it work !!!*/
+    /*transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;*/
 }
 
-.fadeIn {
+#PresentationCard {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.7); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    z-index: 2;
+    width: 80%;
+    height: 10%;
+    padding: 20px;
+    text-align: center;
+
+    /* Doesn't work for Mozilla */
+    backdrop-filter: blur(3px);
 }
