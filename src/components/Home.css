@@ -33,8 +33,9 @@
     font-weight: bold;
     border: 3px solid #f1f1f1;
     z-index: 2;
-    width: 80%;
-    height: 10%;
+    /* TODO : make width responsive for little screen (~ 80%) */
+    width: 50%;
+    /*height: 10%;*/
     padding: 20px;
     text-align: center;
 
