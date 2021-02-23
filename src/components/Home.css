@@ -93,6 +93,6 @@
     -webkit-animation: arrow-jump 1s infinite; /* Safari 4+ */
     -moz-animation:    arrow-jump 1s infinite; /* Fx 5+ */
     -o-animation:      arrow-jump 1s infinite; /* Opera 12+ */
-    animation:         arrow-jump 1s infinite; /* IE 10+, Fx 29+ */
+    animation:         arrow-jump 0.8s infinite alternate; /* IE 10+, Fx 29+ */
 }
 
