@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import './Casson2021.css';
+import './Historique.css';
 
 
-class Casson2021 extends Component {
+class Historique extends Component {
 
 
     render() {
@@ -12,4 +12,4 @@ class Casson2021 extends Component {
     }
 }
 
-export default Casson2021;
+export default Historique;

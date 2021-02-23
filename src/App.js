@@ -2,7 +2,7 @@ import './App.css';
 import {HashRouter, Route, Switch} from "react-router-dom";
 import TopBar from "./components/TopBar";
 import Home from "./components/Home";
-import Casson2021 from "./components/Casson2021";
+import Historique from "./components/Historique";
 import React, {Component} from 'react';
 
 
@@ -25,7 +25,7 @@ class App extends Component {
 
                     <Switch>
                         <Route exact path={"/"} component={() => <Home carRef={this.carRef}/>}/>
-                        <Route path={"/casson2021"} component={Casson2021}/>
+                        <Route path={"/historique"} component={Historique}/>
                         <Route path={"/"} component={() => <div>The page doesn't exist</div>}/>
                     </Switch>
                 </div>
