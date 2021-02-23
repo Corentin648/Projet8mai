@@ -36,13 +36,13 @@ class TopBar extends Component {
                         </button>
                         <div className="dropdown-content">
                             <a id ="ProgrammeTab" href="#" onClick={() => window.location.reload()}>Programme</a>
-                            <hr style={{color: "#ddd", padding: "0", margin: "0"}}/>
+                            <hr style={{ borderTop: "0px" , color: "#ddd", padding: "0", margin: "0"}}/>
                             <a id ="BaladeTab" href="#" onClick={() => window.location.reload()}>Balade</a>
-                            <hr style={{color: "#ddd", padding: "0", margin: "0"}}/>
+                            <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
                             <a id ="BalTab" href="#" onClick={() => window.location.reload()}>Bal du samedi soir</a>
-                            <hr style={{color: "#ddd", padding: "0", margin: "0"}}/>
+                            <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
                             <a id ="MangerTab" href="#" onClick={() => window.location.reload()}>Buvette / Resto</a>
-                            <hr style={{color: "#ddd", padding: "0", margin: "0"}}/>
+                            <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
                             <a id ="VehiculesTab" href="#" onClick={() => window.location.reload()}>Véhicules exposés</a>
                         </div>
                     </div>

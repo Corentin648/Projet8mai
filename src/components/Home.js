@@ -111,7 +111,6 @@ class Home extends Component {
                             <button id={"DiscoverAssoButton"} onClick={() => this.handlerGoToDescription()}>
                                 <div>Découvrir l'asso</div>
                                 <i id={"DecouvrirAssoArrow"} className="fa fa-caret-down"/>
-                                {/*<img id="arrow" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png"/>*/}
                             </button>
                         </div>
                     </div>

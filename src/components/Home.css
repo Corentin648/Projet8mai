@@ -1,7 +1,7 @@
 #HomePage {
 
     /* This line is here for preventing margin-top bug w*/
-    border: 1px solid;
+    border-top: 0;
 
     /* Place the presenting card in the middle */
     display: flex;
@@ -79,20 +79,18 @@
 
 
 @keyframes arrow-jump {
-
     100% {
         -webkit-transform: translateY(10px);
         -moz-transform: translateY(10px);
         -o-transform: translateY(10px);
         transform: translateY(10px);
     }
-
 }
 
 #DecouvrirAssoArrow {
-    -webkit-animation: arrow-jump 1s infinite; /* Safari 4+ */
-    -moz-animation:    arrow-jump 1s infinite; /* Fx 5+ */
-    -o-animation:      arrow-jump 1s infinite; /* Opera 12+ */
+    -webkit-animation: arrow-jump 1s infinite alternate; /* Safari 4+ */
+    -moz-animation:    arrow-jump 1s infinite alternate; /* Fx 5+ */
+    -o-animation:      arrow-jump 1s infinite alternate; /* Opera 12+ */
     animation:         arrow-jump 0.8s infinite alternate; /* IE 10+, Fx 29+ */
 }
 
