@@ -32,7 +32,7 @@ class TopBar extends Component {
                     <Link id="HomeTab" to="/" onClick={() => this.setActiveTab(document.getElementById("HomeTab"))}>Accueil</Link>
                     <div className="dropdown">
                         <button className="dropbtn">Casson 2021
-                            <i style={{paddingLeft: "10px"}} className="fa fa-caret-down"/>
+                            <i style={{paddingLeft: "15px"}} className="fa fa-caret-down"/>
                         </button>
                         <div className="dropdown-content">
                             <a id ="ProgrammeTab" href="#" onClick={() => window.location.reload()}>Programme</a>
