@@ -10,11 +10,9 @@
 
     /* Center and scale the image nicely */
     /* TODO : have to add -webkit-... for Chrome and Safari */
-    background: url("../images/IMG_3608.jpg");
-    background-repeat:  no-repeat;
-    background-position: center;
-    background-attachment: local;
+    background: url("../assets/IMG_3608.jpg") no-repeat local center;
     background-size: cover;
+
 
     /* TODO : make the blurry effect work */
     /* Add blurry */
