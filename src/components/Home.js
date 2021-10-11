@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Home.css';
 import background from "../assets/IMG_3608.jpg";
 import background2 from "../assets/IMG_3628.jpg";
+import logo_pva from "../assets/logo_pva.png";
 
 class Home extends Component {
 
@@ -108,7 +109,7 @@ class Home extends Component {
                     <div id={"PresentationCard"}>
                         <div className="container">
                             <img id={"logoAsso"} style={{}}
-                                 src={"http://placehold.it/350x350"} alt={""}/>
+                                 src={logo_pva} alt={""}/>
                         </div>
                         <h4 style={{fontSize: "30px"}}>Casson J-...</h4>
                         <div>
