@@ -3,7 +3,6 @@ import './Home.css';
 import background from "../assets/IMG_3608.jpg";
 import background2 from "../assets/IMG_3628.jpg";
 
-
 class Home extends Component {
 
     constructor(props) {
@@ -95,7 +94,16 @@ class Home extends Component {
         return (
             <div>
                 <div id={"HomePage"}
-                     style={{/*transition: transition,*/ backgroundImage: backgroundImg, height: imageHeight}}>
+                     style={{/*transition: transition, backgroundImage: backgroundImg, height: imageHeight*/}}>
+
+                    <div className={"_overflow-hidden"}>
+                        <div className={"photo-row"}>
+                            <img className={"photo"} src={background} width={"100%"} height={"100%"}/>
+                            <img className={"photo"} src={background2} width={"100%"} height={"100%"}/>
+                            <img className={"photo"} src={background} width={"100%"} height={"100%"}/>
+                            <img className={"photo"} src={background2} width={"100%"} height={"100%"}/>
+                        </div>
+                    </div>
 
                     <div id={"PresentationCard"}>
                         <div className="container">

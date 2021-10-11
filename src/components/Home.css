@@ -1,42 +1,69 @@
-#HomePage {
+._overflow-hidden {
+    overflow: hidden;
+}
 
-    /* This line is here for preventing margin-top bug w*/
+.photo-row {
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+    white-space: nowrap;
+    animation: photo-row 40s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes photo-row {
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+/*#HomePage {
+
+    !* This line is here for preventing margin-top bug w*!
     border-top: 0;
 
-    /* Place the presenting card in the middle */
+    !* Place the presenting card in the middle *!
     display: flex;
     justify-content: center;
     align-items: center;
 
-    /* Center and scale the image nicely */
-    /* TODO : have to add -webkit-... for Chrome and Safari */
+    !* Center and scale the image nicely *!
+    !* TODO : have to add -webkit-... for Chrome and Safari *!
     background: url("../assets/IMG_3608.jpg") no-repeat local center;
     background-size: cover;
 
 
-    /* TODO : make the blurry effect work */
-    /* Add blurry */
-    /*-webkit-filter: blur(3px); /* Safari 6.0 - 9.0 */
-    /*filter: blur(3px);*/
+    !* TODO : make the blurry effect work *!
+    !* Add blurry *!
+    !*-webkit-filter: blur(3px); !* Safari 6.0 - 9.0 *!
+    !*filter: blur(3px);*!
 
-    /* Add transition when sliding*/
-    /*TODO : make it work !!!*/
-    /*transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;*/
-}
+    !* Add transition when sliding*!
+    !*TODO : make it work !!!*!
+    !*transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;*!
+}*/
 
 #PresentationCard {
 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.7); /* Black w/opacity/see-through */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.7); /* Black w/opacity/see-through */
     color: white;
     font-weight: bold;
     border: 3px solid #f1f1f1;
     z-index: 1;
     /* TODO : make width responsive for little screen (~ 80%) */
+    height: 80%;
     width: 50%;
     padding: 20px;
     text-align: center;
@@ -46,7 +73,7 @@
 }
 
 #InscriptionFormButton {
-    background-color:  #4CAF50; /* Green */
+    background-color: #4CAF50; /* Green */
     border: none;
     outline: none;
     cursor: pointer;
@@ -68,7 +95,7 @@
     align-items: center;
     background-color: transparent;
     border: none;
-    outline:none;
+    outline: none;
     cursor: pointer;
     color: white;
     margin-top: 50px;
@@ -87,8 +114,8 @@
 
 #DecouvrirAssoArrow {
     -webkit-animation: arrow-jump 1s infinite alternate; /* Safari 4+ */
-    -moz-animation:    arrow-jump 1s infinite alternate; /* Fx 5+ */
-    -o-animation:      arrow-jump 1s infinite alternate; /* Opera 12+ */
-    animation:         arrow-jump 0.8s infinite alternate; /* IE 10+, Fx 29+ */
+    -moz-animation: arrow-jump 1s infinite alternate; /* Fx 5+ */
+    -o-animation: arrow-jump 1s infinite alternate; /* Opera 12+ */
+    animation: arrow-jump 0.8s infinite alternate; /* IE 10+, Fx 29+ */
 }
 
