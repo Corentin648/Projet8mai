@@ -111,7 +111,7 @@ class Home extends Component {
                             <img id={"logoAsso"} style={{}}
                                  src={logo_pva} alt={""}/>
                         </div>
-                        <h4 style={{fontSize: "30px"}}>Casson J-...</h4>
+                        <h2 style={{fontSize: "40px", color: "#afaf20"}}>Casson J - 1000</h2>
                         <div>
                             <button id={"InscriptionFormButton"}
                                     onClick={() => this.handlerDownloadInscriptionForm()}>Formulaire d'inscription
@@ -119,8 +119,8 @@ class Home extends Component {
                         </div>
                         <div>
                             <button id={"DiscoverAssoButton"} onClick={() => this.handlerGoToDescription()}>
-                                <div>Découvrir l'asso</div>
-                                <i id={"DecouvrirAssoArrow"} className="fa fa-caret-down"/>
+                                <div style={{color: "#afaf20"}}>Découvrir l'asso</div>
+                                <i style={{color: "#afaf20"}} id={"DecouvrirAssoArrow"} className="fa fa-caret-down"/>
                             </button>
                         </div>
                     </div>

@@ -60,7 +60,7 @@
     background-color: rgba(0, 0, 0, 0.7); /* Black w/opacity/see-through */
     color: white;
     font-weight: bold;
-    border: 3px solid #f1f1f1;
+    border: 15px solid #253615; /* vert foncé de la plaque */
     z-index: 1;
     /* TODO : make width responsive for little screen (~ 80%) */
     height: 80%;
@@ -85,7 +85,7 @@
 }
 
 #InscriptionFormButton:hover {
-    background-color: forestgreen; /* Green */
+    background-color: #62aed7; /* bleu clair du P.V.A */
 }
 
 
