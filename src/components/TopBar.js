@@ -17,14 +17,12 @@ class TopBar extends Component {
         }
     }
 
-    /* Fonction qui permet de stocker le state dans la ressource du navigateur */
     saveStateToLocalStorage = () => {
         localStorage.setItem('state', JSON.stringify(this.state));
     }
 
 
     render() {
-
         const appTopBar = (
             <div id="render">
                 <div className="navbar" id="myTopNav" ref={this.props.carRef}>
@@ -68,6 +66,21 @@ class TopBar extends Component {
         const activeComponent = document.getElementById(this.state.activeTab);
         if (activeComponent !== null) {
             activeComponent.classList.add("active");
+        }
+
+        /*        window.onscroll = function () {
+                    onscrollDown()
+                };*/
+
+        let navbar = document.getElementById("myTopNav");
+        let sticky = navbar.offsetTop;
+
+        function onscrollDown() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
         }
     }
 
