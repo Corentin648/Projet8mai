@@ -96,14 +96,14 @@ class Home extends Component {
                 <div id={"HomePage"}
                      style={{/*transition: transition, backgroundImage: backgroundImg, height: imageHeight*/}}>
 
-                    {/*                    <div className={"_overflow-hidden"}>
+                    <div className={"_overflow-hidden"}>
                         <div className={"photo-row"}>
                             <img className={"photo"} src={background} width={"100%"} height={"100%"}/>
                             <img className={"photo"} src={background2} width={"100%"} height={"100%"}/>
                             <img className={"photo"} src={background} width={"100%"} height={"100%"}/>
                             <img className={"photo"} src={background2} width={"100%"} height={"100%"}/>
                         </div>
-                    </div>*/}
+                    </div>
 
                     {/*                    <div id={"PresentationCard"}>
                         <div className="container">

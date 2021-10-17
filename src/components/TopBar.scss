@@ -1,29 +1,32 @@
 @import '../index.scss';
 
-#render {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-}
-
 .navbar {
-  overflow: hidden;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  //border: 1px red solid;
+  overflow-x: visible;
+  overflow-y: visible;
   background-color: $nav-background-color;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 70px;
 
   // Margin between buttons
   > * {
     margin-right: 5%;
   }
 
-  a {
+  > a {
     display: block;
     color: #f2f2f2;
     text-align: left;
     /* En premier : espacement en hauteur ; En deuxième : espacement en largeur */
-    padding: 20px 16px;
+    padding-left: 10px;
+    padding-right: 10px;
     text-decoration: none;
     font-size: 23px;
+    height: 70px;
+    line-height: 70px;
 
     // Active button
     &.active {
@@ -42,10 +45,11 @@
 }
 
 .sticky {
-  z-index: 2;
+  z-index: 1;
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
 }
 
 .sticky + .content {
@@ -68,24 +72,32 @@
   margin: 0;
 }
 
+.dropbtn:hover {
+  cursor: pointer;
+}
+
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #333;
   min-width: 160px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  z-index: 2;
+  z-index: 1;
+  top: 70px;
+  margin-left: -10px;
 }
 
 
 .dropdown-content a {
   float: none;
   color: #f2f2f2;
-  padding: 12px 16px;
   font-size: 20px;
   text-decoration: none;
-  display: flex;
+  display: block;
+  line-height: normal;
+  padding: 10px;
   text-align: left;
+
 }
 
 .dropdown-content a:hover {
