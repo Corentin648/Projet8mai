@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import {HashRouter, Route, Switch} from "react-router-dom";
 import TopBar from "./components/TopBar";
 import Home from "./components/Home";

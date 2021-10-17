@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Home.css';
+import './Home.scss';
 import background from "../assets/IMG_3608.jpg";
 import background2 from "../assets/IMG_3628.jpg";
 import logo_pva from "../assets/logo_pva.png";
