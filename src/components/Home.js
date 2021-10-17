@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './Home.scss';
 import background from "../assets/IMG_3608.jpg";
 import background2 from "../assets/IMG_3628.jpg";
-import logo_pva from "../assets/logo_pva.png";
 
 class Home extends Component {
 
@@ -97,16 +96,16 @@ class Home extends Component {
                 <div id={"HomePage"}
                      style={{/*transition: transition, backgroundImage: backgroundImg, height: imageHeight*/}}>
 
-                    <div className={"_overflow-hidden"}>
+                    {/*                    <div className={"_overflow-hidden"}>
                         <div className={"photo-row"}>
                             <img className={"photo"} src={background} width={"100%"} height={"100%"}/>
                             <img className={"photo"} src={background2} width={"100%"} height={"100%"}/>
                             <img className={"photo"} src={background} width={"100%"} height={"100%"}/>
                             <img className={"photo"} src={background2} width={"100%"} height={"100%"}/>
                         </div>
-                    </div>
+                    </div>*/}
 
-                    <div id={"PresentationCard"}>
+                    {/*                    <div id={"PresentationCard"}>
                         <div className="container">
                             <img id={"logoAsso"} style={{}}
                                  src={logo_pva} alt={""}/>
@@ -123,7 +122,7 @@ class Home extends Component {
                                 <i style={{color: "#afaf20"}} id={"DecouvrirAssoArrow"} className="fa fa-caret-down"/>
                             </button>
                         </div>
-                    </div>
+                    </div>*/}
                 </div>
                 <div ref={ref => {
                     this.$ref = ref
