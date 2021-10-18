@@ -85,9 +85,9 @@ class Home extends Component {
     render() {
 
         // TODO : revoir le cadrage pour les petits écrans
-        const imageHeight = this.state.mounted ? window.screen.availHeight - (window.outerHeight - window.innerHeight) - this.props.carRef.current.offsetHeight : 0;
+        // const imageHeight = this.state.mounted ? window.screen.availHeight - (window.outerHeight - window.innerHeight) - this.props.carRef.current.offsetHeight : 0;
 
-        const backgroundImg = this.state.mounted ? this.state.backgroundImage : 0;
+        // const backgroundImg = this.state.mounted ? this.state.backgroundImage : 0;
 
         // const transition = this.state.mounted ? this.state.transition : 0;
 
@@ -98,10 +98,10 @@ class Home extends Component {
 
                     <div className={"_overflow-hidden"}>
                         <div className={"photo-row"}>
-                            <img className={"photo"} src={background} width={"100%"} height={"100%"}/>
-                            <img className={"photo"} src={background2} width={"100%"} height={"100%"}/>
-                            <img className={"photo"} src={background} width={"100%"} height={"100%"}/>
-                            <img className={"photo"} src={background2} width={"100%"} height={"100%"}/>
+                            <img className={"photo"} src={background} width={"100%"} height={"100%"} alt=""/>
+                            <img className={"photo"} src={background2} width={"100%"} height={"100%"} alt=""/>
+                            <img className={"photo"} src={background} width={"100%"} height={"100%"} alt=""/>
+                            <img className={"photo"} src={background2} width={"100%"} height={"100%"} alt=""/>
                         </div>
                     </div>
 

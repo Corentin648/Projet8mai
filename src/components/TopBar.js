@@ -9,7 +9,7 @@ class TopBar extends Component {
         this.state = {
             activeTab: "HomeTab",
             dropdownWidth: 100,
-            dropdownDisplay: "none"
+            toggleClick: ""
         }
 
         //localStorage.clear();
@@ -26,18 +26,14 @@ class TopBar extends Component {
 
     render() {
         const appTopBar = (
-            <div className="navbar" id="myTopNav" ref={this.props.carRef}>
+            <div className={"navbar" + this.state.toggleClick} id="myTopNav" ref={this.props.carRef}>
                 <Link id="HomeTab" to="/"
                       onClick={() => this.setActiveTab(document.getElementById("HomeTab"))}>Accueil</Link>
-                {/*<div className="dropdown">*/}
                 <Link className="dropdown" id="CassonTab" to="/"
                       onClick={() => this.setActiveTab(document.getElementById("HomeTab"))}>
                     Casson 2021
                     <i style={{paddingLeft: "15px"}} className="fa fa-caret-down"/>
-                    {/*                    <button className="dropbtn">Casson 2021
-                        <i style={{paddingLeft: "15px"}} className="fa fa-caret-down"/>
-                    </button>*/}
-                    <div style={{width: this.state.dropdownWidth, display: this.state.dropdownDisplay}}
+                    <div style={{width: this.state.dropdownWidth}}
                          className="dropdown-content">
                         <a id="ProgrammeTab" href="/" onClick={() => this.handleOnClickDropdownTab()}>Programme</a>
                         <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
@@ -54,9 +50,9 @@ class TopBar extends Component {
                       onClick={() => this.setActiveTab(document.getElementById("HistoriqueTab"))}>Historique</Link>
                 <Link id="ContactTab" to="/"
                       onClick={() => this.setActiveTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
-                <a href="/" className="icon" onClick={() => this.handleOnClickToggle()}>
+                <Link to="/" className="icon" onClick={() => this.handleOnClickToggle()}>
                     <i className="fa fa-bars"/>
-                </a>
+                </Link>
 
             </div>
         )
@@ -71,8 +67,15 @@ class TopBar extends Component {
         }
 
         const dropdown = document.getElementById("CassonTab");
+
+        // dropdown.offsetWidth !== 0 means that we are in no toggle button case
         this.setState({
-            dropdownWidth: dropdown.offsetWidth
+            dropdownWidth: (dropdown.offsetWidth !== 0) ? dropdown.offsetWidth : "100%"
+        });
+
+
+        this.setState({
+            toggleClick: ""
         });
 
         window.addEventListener('scroll', this.handleScroll);
@@ -81,7 +84,6 @@ class TopBar extends Component {
     handleScroll() {
         let navbar = document.getElementById("myTopNav");
         let sticky = navbar.offsetTop;
-        console.log(window.pageYOffset);
 
         if (window.pageYOffset >= sticky) {
             navbar.classList.add("sticky")
@@ -91,6 +93,7 @@ class TopBar extends Component {
     }
 
     setActiveTab = (tab) => {
+        this.handleOnClickDropdownTab();
         const elements = document.body.getElementsByTagName("*");
         const inputList = Array.prototype.slice.call(elements);
         for (let i = 0; i < inputList.length; i++) {
@@ -109,16 +112,18 @@ class TopBar extends Component {
     handleOnClickToggle = () => {
         let x = document.getElementById("myTopNav");
         if (x.className === "navbar") {
-            x.className += " responsive";
+            this.setState({
+                toggleClick: " expand-tabs"
+            });
         } else {
-            x.className = "navbar";
+            this.setState({
+                toggleClick: ""
+            });
         }
     }
 
     handleOnClickDropdownTab = () => {
-        this.setState({
-            dropdownDisplay: "hidden"
-        });
+        this.handleOnClickToggle();
     }
 }
 

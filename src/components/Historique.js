@@ -7,7 +7,7 @@ class Historique extends Component {
 
     render() {
         return (
-            <div>Vous voici sur la page Casson 2021</div>
+            <div style={{marginTop: "70px"}}>Vous voici sur la page Casson 2021</div>
         );
     }
 }

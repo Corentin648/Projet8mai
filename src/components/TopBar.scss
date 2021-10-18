@@ -88,70 +88,47 @@
   }
 }
 
-/*.dropdown {
-float: left;
-overflow: hidden;
-}*/
 
-/*.dropdown .dropbtn {
-  font-size: 23px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 20px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.dropbtn:hover {
-  cursor: pointer;
-}*/
-
-/* Le toggle n'apparait pas par défaut */
+/* Toggle button not visible for large screen */
 .navbar .icon {
   display: none;
 }
 
 @media screen and (max-width: 600px) {
-  .navbar a:not(:first-child), .dropdown .dropbtn {
+  .navbar {
+    display: block;
+  }
+
+  .navbar a {
     display: none;
   }
 
   .navbar a.icon {
-    float: right;
     display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    margin-right: 0;
+    width: 60px;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .navbar.responsive {
-    position: relative;
-  }
-
-  .navbar.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  .navbar.responsive a {
-    float: none;
+  .navbar.expand-tabs {
+    height: 100%;
     display: block;
-    text-align: left;
   }
 
-  .navbar.responsive .dropdown {
-    float: none;
-  }
-
-  .navbar.responsive .dropdown-content {
-    position: relative;
-  }
-
-  .navbar.responsive .dropdown .dropbtn {
+  .navbar.expand-tabs a:not(:last-child) {
     display: block;
     width: 100%;
-    text-align: left;
+    height: auto;
+  }
+
+  .navbar.expand-tabs .dropdown-content {
+    position: static;
+    display: block;
   }
 }
