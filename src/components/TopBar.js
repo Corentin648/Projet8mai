@@ -9,7 +9,7 @@ class TopBar extends Component {
         this.state = {
             activeTab: "HomeTab",
             dropdownWidth: 100,
-            dropdownDisplay: "hidden"
+            dropdownDisplay: "none"
         }
 
         //localStorage.clear();
@@ -52,7 +52,7 @@ class TopBar extends Component {
                 </Link>
                 <Link id="HistoriqueTab" to="/historique"
                       onClick={() => this.setActiveTab(document.getElementById("HistoriqueTab"))}>Historique</Link>
-                <Link id="ContactTab" to="/historique"
+                <Link id="ContactTab" to="/"
                       onClick={() => this.setActiveTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
                 <a href="/" className="icon" onClick={() => this.handleOnClickToggle()}>
                     <i className="fa fa-bars"/>
@@ -76,22 +76,6 @@ class TopBar extends Component {
         });
 
         window.addEventListener('scroll', this.handleScroll);
-
-        /*        window.onscroll = function () {
-                    onScroll()
-                };*/
-
-        /*        let navbar = document.getElementById("myTopNav");
-                let sticky = navbar.offsetTop;
-                console.log(sticky);
-
-                function onScroll() {
-                    if (window.pageYOffset >= sticky) {
-                        navbar.classList.add("sticky")
-                    } else {
-                        navbar.classList.remove("sticky");
-                    }
-                }*/
     }
 
     handleScroll() {

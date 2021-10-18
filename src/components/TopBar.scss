@@ -2,7 +2,6 @@
 
 .navbar {
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  //border: 1px red solid;
   overflow-x: visible;
   overflow-y: visible;
   background-color: $nav-background-color;
@@ -10,6 +9,12 @@
   justify-content: center;
   align-items: center;
   height: 70px;
+
+  // Sticky
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100vw;
 
   // Margin between buttons
   > * {
@@ -20,7 +25,6 @@
     display: block;
     color: #f2f2f2;
     text-align: left;
-    /* En premier : espacement en hauteur ; En deuxième : espacement en largeur */
     padding-left: 10px;
     padding-right: 10px;
     text-decoration: none;
@@ -28,40 +32,68 @@
     height: 70px;
     line-height: 70px;
 
-    // Active button
+    // Active tab
     &.active {
       background-color: $green-button-color;
       color: $green-button-text;
     }
+
+    // Hover tab
+    &:hover {
+      @extend %navbar-tab-hover;
+    }
   }
-
-  a:hover {
-    background-color: $green-button-color;
-    color: $green-button-text;
-    transition: 0.4s;
-  }
-
-
 }
 
-.sticky {
+/*.sticky {
   z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-}
-
-.sticky + .content {
-  padding-top: 60px;
-}
+}*/
 
 .dropdown {
-  float: left;
-  overflow: hidden;
+  &:hover {
+    .dropdown-content {
+      display: block;
+    }
+  }
 }
 
-.dropdown .dropbtn {
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  top: 70px;
+  margin-left: -10px;
+
+  a {
+    //float: none;
+    color: #f2f2f2;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+    line-height: normal;
+    padding: 10px;
+    text-align: left;
+
+    // Hover tab
+    &:hover {
+      @extend %navbar-tab-hover;
+    }
+  }
+}
+
+/*.dropdown {
+float: left;
+overflow: hidden;
+}*/
+
+/*.dropdown .dropbtn {
   font-size: 23px;
   border: none;
   outline: none;
@@ -74,39 +106,7 @@
 
 .dropbtn:hover {
   cursor: pointer;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  min-width: 160px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  top: 70px;
-  margin-left: -10px;
-}
-
-
-.dropdown-content a {
-  float: none;
-  color: #f2f2f2;
-  font-size: 20px;
-  text-decoration: none;
-  display: block;
-  line-height: normal;
-  padding: 10px;
-  text-align: left;
-
-}
-
-.dropdown-content a:hover {
-  background-color: $green-button-color;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+}*/
 
 /* Le toggle n'apparait pas par défaut */
 .navbar .icon {
