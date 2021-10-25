@@ -8,7 +8,6 @@ class TopBar extends Component {
         super(props);
         this.state = {
             activeTab: "HomeTab",
-            dropdownWidth: 100,
             toggleClick: ""
         }
 
@@ -33,8 +32,8 @@ class TopBar extends Component {
                       onClick={() => this.setActiveTab(document.getElementById("HomeTab"))}>
                     Casson 2021
                     <i style={{paddingLeft: "15px"}} className="fa fa-caret-down"/>
-                    <div style={{width: this.state.dropdownWidth}}
-                         className="dropdown-content">
+                    <div
+                        className="dropdown-content">
                         <a id="ProgrammeTab" href="/" onClick={() => this.handleOnClickDropdownTab()}>Programme</a>
                         <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
                         <a id="BaladeTab" href="/" onClick={() => window.location.reload()}>Balade</a>
@@ -50,7 +49,7 @@ class TopBar extends Component {
                       onClick={() => this.setActiveTab(document.getElementById("HistoriqueTab"))}>Historique</Link>
                 <Link id="ContactTab" to="/"
                       onClick={() => this.setActiveTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
-                <Link to="/" className="icon" onClick={() => this.handleOnClickToggle()}>
+                <Link to="/" className="toggle" onClick={() => this.handleOnClickToggle()}>
                     <i className="fa fa-bars"/>
                 </Link>
 
@@ -65,14 +64,6 @@ class TopBar extends Component {
         if (activeComponent !== null) {
             activeComponent.classList.add("active");
         }
-
-        const dropdown = document.getElementById("CassonTab");
-
-        // dropdown.offsetWidth !== 0 means that we are in no toggle button case
-        this.setState({
-            dropdownWidth: (dropdown.offsetWidth !== 0) ? dropdown.offsetWidth : "100%"
-        });
-
 
         this.setState({
             toggleClick: ""

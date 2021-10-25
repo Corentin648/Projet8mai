@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70px;
+  height: $navbar-height;
 
   // Sticky
   z-index: 1;
@@ -29,7 +29,7 @@
     padding-right: 10px;
     text-decoration: none;
     font-size: 23px;
-    height: 70px;
+    height: $navbar-height;
     line-height: 70px;
 
     // Active tab
@@ -54,6 +54,8 @@
 }*/
 
 .dropdown {
+  position: relative;
+
   &:hover {
     .dropdown-content {
       display: block;
@@ -65,11 +67,10 @@
   display: none;
   position: absolute;
   background-color: #333;
-  min-width: 160px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
-  top: 70px;
-  margin-left: -10px;
+  left: 0;
+  width: 100%;
 
   a {
     //float: none;
@@ -90,28 +91,29 @@
 
 
 /* Toggle button not visible for large screen */
-.navbar .icon {
+.navbar .toggle {
   display: none;
 }
 
 @media screen and (max-width: 600px) {
   .navbar {
     display: block;
-  }
 
-  .navbar a {
-    display: none;
-  }
+    a {
+      display: none;
 
-  .navbar a.icon {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 0;
-    margin-right: 0;
-    width: 60px;
-    text-align: center;
+      // Only toggle is displayed
+      &.toggle {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0;
+        margin-right: 0;
+        width: 60px;
+        text-align: center;
+      }
+    }
   }
 }
 
@@ -119,16 +121,20 @@
   .navbar.expand-tabs {
     height: 100%;
     display: block;
-  }
 
-  .navbar.expand-tabs a:not(:last-child) {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+    // All tabs are displayed
+    a:not(.toggle) {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 
-  .navbar.expand-tabs .dropdown-content {
-    position: static;
-    display: block;
+    .dropdown-content {
+      position: static;
+      display: block;
+      width: 100%;
+      margin-left: -10px;
+      box-shadow: unset;
+    }
   }
 }
