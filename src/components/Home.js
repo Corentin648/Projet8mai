@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Home.scss';
 import background from "../assets/IMG_3608.jpg";
 import background2 from "../assets/IMG_3628.jpg";
+import logo_pva from "../assets/logo_pva.png";
 
 class Home extends Component {
 
@@ -105,14 +106,14 @@ class Home extends Component {
                         </div>
                     </div>
 
-                    {/*                    <div id={"PresentationCard"}>
-                        <div className="container">
-                            <img id={"logoAsso"} style={{}}
+                    <div id={"presentation-card"}>
+                        <div id="logo-container">
+                            <img id={"logo"}
                                  src={logo_pva} alt={""}/>
                         </div>
-                        <h2 style={{fontSize: "40px", color: "#afaf20"}}>Casson J - 1000</h2>
+                        <h2 style={{fontSize: "3.0vh", color: "#afaf20"}}>Casson J - 1000</h2>
                         <div>
-                            <button id={"InscriptionFormButton"}
+                            <button id={"InscriptionFormButton"} style={{width: "10vw", height: "6vh"}}
                                     onClick={() => this.handlerDownloadInscriptionForm()}>Formulaire d'inscription
                             </button>
                         </div>
@@ -122,7 +123,7 @@ class Home extends Component {
                                 <i style={{color: "#afaf20"}} id={"DecouvrirAssoArrow"} className="fa fa-caret-down"/>
                             </button>
                         </div>
-                    </div>*/}
+                    </div>
                 </div>
                 <div ref={ref => {
                     this.$ref = ref

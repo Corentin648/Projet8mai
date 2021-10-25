@@ -72,17 +72,6 @@ class TopBar extends Component {
         window.addEventListener('scroll', this.handleScroll);
     }
 
-    handleScroll() {
-        let navbar = document.getElementById("myTopNav");
-        let sticky = navbar.offsetTop;
-
-        if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-        } else {
-            navbar.classList.remove("sticky");
-        }
-    }
-
     setActiveTab = (tab) => {
         this.handleOnClickDropdownTab();
         const elements = document.body.getElementsByTagName("*");

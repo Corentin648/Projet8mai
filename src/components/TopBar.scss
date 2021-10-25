@@ -11,7 +11,7 @@
   height: $navbar-height;
 
   // Sticky
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   top: 0;
   width: 100vw;
@@ -68,7 +68,7 @@
   position: absolute;
   background-color: #333;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 2;
   left: 0;
   width: 100%;
 
@@ -98,6 +98,7 @@
 @media screen and (max-width: 600px) {
   .navbar {
     display: block;
+    z-index: 3;
 
     a {
       display: none;
