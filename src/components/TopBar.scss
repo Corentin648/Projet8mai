@@ -95,7 +95,7 @@
   display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
   .navbar {
     display: block;
     z-index: 3;
@@ -118,7 +118,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
   .navbar.expand-tabs {
     height: 100%;
     display: block;

@@ -95,7 +95,8 @@ class Home extends Component {
         return (
             <div>
                 <div id={"HomePage"}
-                     style={{/*transition: transition, backgroundImage: backgroundImg, height: imageHeight*/}}>
+                    //style={{/*transition: transition, backgroundImage: backgroundImg, height: imageHeight*/}}
+                     style={{width: "100vw"}}>
 
                     <div className={"_overflow-hidden"}>
                         <div className={"photo-row"}>
@@ -112,17 +113,16 @@ class Home extends Component {
                                  src={logo_pva} alt={""}/>
                         </div>
                         <h2 style={{fontSize: "3.0vh", color: "#afaf20"}}>Casson J - 1000</h2>
-                        <div>
-                            <button id={"InscriptionFormButton"} style={{width: "10vw", height: "6vh"}}
-                                    onClick={() => this.handlerDownloadInscriptionForm()}>Formulaire d'inscription
-                            </button>
-                        </div>
-                        <div>
-                            <button id={"DiscoverAssoButton"} onClick={() => this.handlerGoToDescription()}>
-                                <div style={{color: "#afaf20"}}>Découvrir l'asso</div>
-                                <i style={{color: "#afaf20"}} id={"DecouvrirAssoArrow"} className="fa fa-caret-down"/>
-                            </button>
-                        </div>
+
+                        <button id={"inscription-form-button"}
+                                onClick={() => this.handlerDownloadInscriptionForm()}>Formulaire d'inscription
+                        </button>
+
+                        <button id={"discover-asso-button"} onClick={() => this.handlerGoToDescription()}>
+                            <div style={{color: "#afaf20"}}>Découvrir l'asso</div>
+                            <i style={{color: "#afaf20"}} id={"discover-asso-arrow"} className="fa fa-caret-down"/>
+                        </button>
+
                     </div>
                 </div>
                 <div ref={ref => {

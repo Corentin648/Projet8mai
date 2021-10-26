@@ -60,16 +60,15 @@ class TopBar extends Component {
     }
 
     componentDidMount() {
-        const activeComponent = document.getElementById(this.state.activeTab);
+        let activeComponent = document.getElementById(this.state.activeTab);
         if (activeComponent !== null) {
             activeComponent.classList.add("active");
         }
 
-        this.setState({
-            toggleClick: ""
-        });
-
-        window.addEventListener('scroll', this.handleScroll);
+        /*        this.setState({
+                    toggleClick: ""
+                });*/
+        console.log(this.state.toggleClick);
     }
 
     setActiveTab = (tab) => {
