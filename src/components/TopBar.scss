@@ -4,13 +4,12 @@
   font-family: Roboto, Arial, Helvetica, sans-serif;
   overflow-x: visible;
   overflow-y: visible;
-  background-color: $nav-background-color;
   display: flex;
   justify-content: center;
   align-items: center;
   height: $navbar-height;
 
-  opacity: 0.7;
+  background: rgba(20, 20, 20, 0.4);
 
   // Sticky
   z-index: 2;
@@ -19,7 +18,8 @@
   width: 100vw;
 
   &:hover {
-    opacity: 1;
+    background-color: $nav-background-color;
+    transition: 0.4s;
   }
 
   // Margin between buttons
@@ -50,14 +50,6 @@
     }
   }
 }
-
-/*.sticky {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}*/
 
 .dropdown {
   position: relative;
