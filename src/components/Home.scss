@@ -13,38 +13,6 @@
   animation-delay: 1s;
 }
 
-@keyframes photo-row {
-  to {
-    transform: translateX(-200%);
-  }
-}
-
-/*#HomePage {
-
-    !* This line is here for preventing margin-top bug w*!
-    border-top: 0;
-
-    !* Place the presenting card in the middle *!
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    !* Center and scale the image nicely *!
-    !* TODO : have to add -webkit-... for Chrome and Safari *!
-    background: url("../assets/IMG_3608.jpg") no-repeat local center;
-    background-size: cover;
-
-
-    !* TODO : make the blurry effect work *!
-    !* Add blurry *!
-    !*-webkit-filter: blur(3px); !* Safari 6.0 - 9.0 *!
-    !*filter: blur(3px);*!
-
-    !* Add transition when sliding*!
-    !*TODO : make it work !!!*!
-    !*transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;*!
-}*/
-
 #presentation-card {
 
   position: absolute;
@@ -144,6 +112,11 @@
   }
 }
 
+@keyframes photo-row {
+  to {
+    transform: translateX(-200%);
+  }
+}
 
 @keyframes arrow-jump {
   100% {

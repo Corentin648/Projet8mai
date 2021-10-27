@@ -9,23 +9,10 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            backgroundImage: "",
-            mounted: false,
-            transition: "",
             backgroundHeight: 0,
             countDown: 0
         }
     }
-
-    /*
-        slidePhotos = (images, nextImage) => {
-            if(nextImage>=images.length){nextImage=0;}
-            let backgroundImage = document.getElementById("HomePage").style.backgroundImage;
-            backgroundImage = 'url("'+images[nextImage++]+'")';
-             backgroundImage.show(500,function(){
-                    setTimeout(this.slidePhotos(),1000);
-                });
-        }*/
 
 
     handlerDownloadInscriptionForm = () => {
@@ -37,7 +24,6 @@ class Home extends Component {
         const y = element.getBoundingClientRect().top + window.pageYOffset - 70;
 
         window.scrollTo({top: y, behavior: 'smooth'});
-        //element.scrollIntoView({block: "start", behavior: "smooth", inline: "nearest"});
     }
 
     handleResize = () => {
@@ -48,48 +34,7 @@ class Home extends Component {
         });
     }
 
-
-    componentDidMount() {
-
-        let animationFrameId;
-        const FPS = 0.5;    // changing background image every 10 sec
-        const delay = 1000 / FPS;
-        let previous = 0;
-
-        let images = [`url(${background})`, `url(${background2})`];
-        let nextImage = 0;
-
-        const render = () => {
-
-            animationFrameId = window.requestAnimationFrame(render);
-
-            const now = Date.now();
-            if (now - previous < delay) {
-                return;
-            }
-            previous = now;
-
-            if (nextImage >= images.length - 1) {
-                nextImage = 0;
-            } else {
-                nextImage++;
-            }
-
-            this.setState({
-                transition: "width 0.5s, height 0.5s, opacity 0.5s 0.5s",
-                backgroundImage: images[nextImage]
-            });
-        }
-
-        render();
-
-        const presentationCard = document.getElementById("presentation-card");
-        this.setState({
-            backgroundHeight: Math.max(window.visualViewport.height, presentationCard.offsetHeight + 80),
-            mounted: true
-        });
-        window.addEventListener('resize', () => this.handleResize());
-
+    calculateCountDown = () => {
         const countDownDate = new Date("May 8, 2022 00:00:00").getTime();
         const now = new Date().getTime();
         const days = Math.floor((countDownDate - now) / (1000 * 60 * 60 * 24));
@@ -97,28 +42,24 @@ class Home extends Component {
         this.setState({
             countDown: days
         });
+    }
 
-        return () => {
-            window.cancelAnimationFrame(animationFrameId);
-        }
 
+    componentDidMount() {
+
+        this.handleResize();
+        window.addEventListener('resize', () => this.handleResize());
+
+        this.calculateCountDown();
     }
 
 
     render() {
 
-        // TODO : revoir le cadrage pour les petits écrans
-        // const imageHeight = this.state.mounted ? window.screen.availHeight - (window.outerHeight - window.innerHeight) - this.props.carRef.current.offsetHeight : 0;
-
-        // const backgroundImg = this.state.mounted ? this.state.backgroundImage : 0;
-
-        // const transition = this.state.mounted ? this.state.transition : 0;
-
         return (
             <div>
-                <div id={"HomePage"}
-                    //style={{/*transition: transition, backgroundImage: backgroundImg, height: imageHeight*/}}
-                     style={{width: "100%"}}>
+                <div id={"presentation-part"}
+                     style={{width: "100%", height: this.state.backgroundHeight}}>
 
                     <div className={"_overflow-hidden"}>
                         <div className={"photo-row"} style={{height: this.state.backgroundHeight}}>
