@@ -11,7 +11,9 @@ class Home extends Component {
         this.state = {
             backgroundImage: "",
             mounted: false,
-            transition: ""
+            transition: "",
+            backgroundHeight: 0,
+            countDown: 0
         }
     }
 
@@ -32,7 +34,18 @@ class Home extends Component {
 
     handlerGoToDescription = () => {
         const element = document.getElementById("leBonLorem");
-        element.scrollIntoView({block: "start", behavior: "smooth", inline: "nearest"});
+        const y = element.getBoundingClientRect().top + window.pageYOffset - 70;
+
+        window.scrollTo({top: y, behavior: 'smooth'});
+        //element.scrollIntoView({block: "start", behavior: "smooth", inline: "nearest"});
+    }
+
+    handleResize = () => {
+        const presentationCard = document.getElementById("presentation-card");
+
+        this.setState({
+            backgroundHeight: Math.max(window.visualViewport.height, presentationCard.offsetHeight + 80)
+        });
     }
 
 
@@ -70,11 +83,20 @@ class Home extends Component {
 
         render();
 
-
+        const presentationCard = document.getElementById("presentation-card");
         this.setState({
+            backgroundHeight: Math.max(window.visualViewport.height, presentationCard.offsetHeight + 80),
             mounted: true
         });
+        window.addEventListener('resize', () => this.handleResize());
 
+        const countDownDate = new Date("May 8, 2022 00:00:00").getTime();
+        const now = new Date().getTime();
+        const days = Math.floor((countDownDate - now) / (1000 * 60 * 60 * 24));
+
+        this.setState({
+            countDown: days
+        });
 
         return () => {
             window.cancelAnimationFrame(animationFrameId);
@@ -96,10 +118,10 @@ class Home extends Component {
             <div>
                 <div id={"HomePage"}
                     //style={{/*transition: transition, backgroundImage: backgroundImg, height: imageHeight*/}}
-                     style={{width: "100vw"}}>
+                     style={{width: "100%"}}>
 
                     <div className={"_overflow-hidden"}>
-                        <div className={"photo-row"}>
+                        <div className={"photo-row"} style={{height: this.state.backgroundHeight}}>
                             <img className={"photo"} src={background} width={"100%"} height={"100%"} alt=""/>
                             <img className={"photo"} src={background2} width={"100%"} height={"100%"} alt=""/>
                             <img className={"photo"} src={background} width={"100%"} height={"100%"} alt=""/>
@@ -112,10 +134,11 @@ class Home extends Component {
                             <img id={"logo"}
                                  src={logo_pva} alt={""}/>
                         </div>
-                        <h2 style={{fontSize: "3.0vh", color: "#afaf20"}}>Casson J - 1000</h2>
+                        <h2 id="casson-countdown">Casson J - {this.state.countDown}</h2>
 
                         <button id={"inscription-form-button"}
-                                onClick={() => this.handlerDownloadInscriptionForm()}>Formulaire d'inscription
+                                onClick={() => this.handlerDownloadInscriptionForm()}>Formulaire d'inscription pour
+                            exposants
                         </button>
 
                         <button id={"discover-asso-button"} onClick={() => this.handlerGoToDescription()}>
@@ -127,7 +150,8 @@ class Home extends Component {
                 </div>
                 <div ref={ref => {
                     this.$ref = ref
-                }} id={"leBonLorem"}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, quo, saepe!
+                }} id={"leBonLorem"} style={{margin: "0", padding: "0"}}>Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Cupiditate, quo, saepe!
                     Accusantium animi assumenda consectetur cumque cupiditate debitis dolorem ea exercitationem
                     explicabo fugit illo itaque necessitatibus praesentium quidem quis, quo reiciendis sapiente soluta
                     ullam voluptas! A beatae commodi, culpa debitis dicta dolor earum exercitationem harum inventore

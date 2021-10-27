@@ -64,7 +64,7 @@
   z-index: 1;
 
   min-height: unset;
-  height: 80%;
+  height: max-content;
   width: 50%;
   padding: 20px;
   text-align: center;
@@ -83,6 +83,12 @@
       height: 100%;
       left: 0;
     }
+  }
+
+  #casson-countdown {
+    font-size: 5vw;
+    font-family: Roboto, Arial, Helvetica, serif;
+    color: $yellow-text;
   }
 
   #inscription-form-button {
@@ -110,10 +116,8 @@
     outline: none;
     cursor: pointer;
     color: white;
-    //margin-top: 50px;
+    margin-top: 5%;
     font-size: 20px;
-    position: absolute;
-    bottom: 10%;
 
     #discover-asso-arrow {
       -webkit-animation: arrow-jump 1s infinite alternate; /* Safari 4+ */
@@ -126,10 +130,16 @@
 
 @media screen and (max-width: 750px) {
   #presentation-card {
-    //height: 60%;
 
     #inscription-form-button {
       width: 70%;
+      font-size: 3vw;
+      padding: 5px;
+      margin-top: 20%;
+    }
+
+    #discover-asso-button {
+      margin-top: 40%;
     }
   }
 }
