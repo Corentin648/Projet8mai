@@ -32,8 +32,11 @@ export default class HomePage extends Component {
                 <PresentationSection backgroundHeight={this.state.backgroundHeight}/>
 
                 <section id={"cards-section"} style={{width: "100%", height: "100vh"}}>
-                    <div id={"cards-wrapper"}>
-                        <div id={"history-card"}></div>
+                    <div style={{marginLeft: "auto", marginRight: "auto", marginTop: "50px", width: "50%"}}
+                         id={"cards-wrapper"}>
+                        <div id={"history-card"} style={{display: "flex", justifyContent: "center", width: "100%"}}>
+                            <img className={"photo"} src={"https://via.placeholder.com/320"} alt=""/>
+                        </div>
                         <div id={"casson2022-card"}></div>
                     </div>
                 </section>
