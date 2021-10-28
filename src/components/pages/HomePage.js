@@ -14,7 +14,7 @@ export default class HomePage extends Component {
         const presentationPanel = document.getElementById("presentation-panel");
         console.log(presentationPanel);
         this.setState({
-            backgroundHeight: Math.max(window.visualViewport.height, presentationPanel.offsetHeight + 80)
+            backgroundHeight: Math.max(window.visualViewport.height, presentationPanel.offsetHeight + 85)
         });
     }
 
@@ -31,7 +31,7 @@ export default class HomePage extends Component {
             <div>
                 <PresentationSection backgroundHeight={this.state.backgroundHeight}/>
 
-                <section id={"cards-section"} style={{width: "100%", height: "100vw"}}>
+                <section id={"cards-section"} style={{width: "100%", height: "100vh"}}>
                     <div id={"cards-wrapper"}>
                         <div id={"history-card"}></div>
                         <div id={"casson2022-card"}></div>

@@ -15,7 +15,7 @@ export default class PresentationSection extends Component {
 
     handlerGoToDescription = () => {
         const element = document.getElementById("cards-section");
-        const y = element.getBoundingClientRect().top + window.pageYOffset - 70;
+        const y = element.getBoundingClientRect().top + window.pageYOffset;
 
         window.scrollTo({top: y, behavior: 'smooth'});
     }
