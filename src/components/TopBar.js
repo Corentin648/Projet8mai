@@ -68,7 +68,7 @@ class TopBar extends Component {
         /*        this.setState({
                     toggleClick: ""
                 });*/
-        console.log(this.state.toggleClick);
+
     }
 
     setActiveTab = (tab) => {

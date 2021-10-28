@@ -13,7 +13,7 @@
   animation-delay: 1s;
 }
 
-#presentation-card {
+#presentation-panel {
 
   position: absolute;
   top: $navbar-height;
@@ -97,7 +97,7 @@
 }
 
 @media screen and (max-width: 750px) {
-  #presentation-card {
+  #presentation-panel {
 
     #inscription-form-button {
       width: 70%;
