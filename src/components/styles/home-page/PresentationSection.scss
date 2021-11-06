@@ -28,7 +28,7 @@
 
   background-color: rgba(0, 0, 0, 0.7); /* Black w/opacity/see-through */
   font-weight: bold;
-  border: 10px solid #253615; /* vert foncé de la plaque */
+  border: 10px solid $dark-green-text; /* vert foncé de la plaque */
   z-index: 1;
 
   min-height: unset;

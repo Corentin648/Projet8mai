@@ -1,1 +1,69 @@
 @import '../index.scss';
+
+#cards-wrapper {
+  width: 60%;
+
+  /* Centered on page */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  /* Space between cards */
+  &:not(:first-child) {
+    margin-top: 50px;
+  }
+
+  .photo {
+    border: 5px solid $dark-green-text;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .5);
+  }
+
+  .pitch-container {
+    width: 50%;
+
+    .pitch-title {
+      color: $yellow-text;
+      font-size: 25px;
+    }
+  }
+}
+
+.card-body.slide-to-center {
+
+  /* To target only odd elements */
+  &:nth-child(2n+1) {
+    animation: slide-right-to-center 1.5s forwards;
+    margin-left: 200px;
+  }
+
+  /* To target only even elements */
+  &:nth-child(2n) {
+    animation: slide-left-to-center 1.5s forwards;
+    margin-left: -200px;
+  }
+}
+
+
+@keyframes slide-right-to-center {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200px);
+  }
+}
+
+
+@keyframes slide-left-to-center {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
