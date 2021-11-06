@@ -25,7 +25,7 @@ class TopBar extends Component {
 
     render() {
         const appTopBar = (
-            <div className={"navbar" + this.state.toggleClick} id="myTopNav" ref={this.props.carRef}>
+            <div className={"navbar " + this.state.toggleClick} id="myTopNav" ref={this.props.carRef}>
                 <Link id="HomeTab" to="/"
                       onClick={() => this.setActiveTab(document.getElementById("HomeTab"))}>Accueil</Link>
                 <Link className="dropdown" id="CassonTab" to="/"
@@ -50,7 +50,7 @@ class TopBar extends Component {
                 <Link id="ContactTab" to="/"
                       onClick={() => this.setActiveTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
                 <Link to="/" className="toggle" onClick={() => this.handleOnClickToggle()}>
-                    <i className="fa fa-bars"/>
+                    <i className={this.toggleIcon()}/>
                 </Link>
 
             </div>
@@ -64,11 +64,6 @@ class TopBar extends Component {
         if (activeComponent !== null) {
             activeComponent.classList.add("active");
         }
-
-        /*        this.setState({
-                    toggleClick: ""
-                });*/
-
     }
 
     setActiveTab = (tab) => {
@@ -90,15 +85,14 @@ class TopBar extends Component {
 
     handleOnClickToggle = () => {
         let x = document.getElementById("myTopNav");
-        if (x.className === "navbar") {
-            this.setState({
-                toggleClick: " expand-tabs"
-            });
-        } else {
-            this.setState({
-                toggleClick: ""
-            });
-        }
+        this.setState({
+            toggleClick: x.className.includes("expand-tabs") ? "" : "expand-tabs"
+        });
+
+    }
+
+    toggleIcon = () => {
+        return this.state.toggleClick.includes("expand-tabs") ? "fa fa-times" : "fa fa-bars";
     }
 
     handleOnClickDropdownTab = () => {
