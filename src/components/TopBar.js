@@ -22,50 +22,6 @@ class TopBar extends Component {
         localStorage.setItem('state', JSON.stringify(this.state));
     }
 
-
-    render() {
-        const appTopBar = (
-            <div className={"navbar " + this.state.toggleClick} id="myTopNav" ref={this.props.carRef}>
-                <Link id="HomeTab" to="/"
-                      onClick={() => this.setActiveTab(document.getElementById("HomeTab"))}>Accueil</Link>
-                <Link className="dropdown" id="CassonTab" to="/"
-                      onClick={() => this.setActiveTab(document.getElementById("HomeTab"))}>
-                    Casson 2021
-                    <i style={{paddingLeft: "15px"}} className="fa fa-caret-down"/>
-                    <div
-                        className="dropdown-content">
-                        <a id="ProgrammeTab" href="/" onClick={() => this.handleOnClickDropdownTab()}>Programme</a>
-                        <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
-                        <a id="BaladeTab" href="/" onClick={() => window.location.reload()}>Balade</a>
-                        <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
-                        <a id="BalTab" href="/" onClick={() => window.location.reload()}>Bal du samedi soir</a>
-                        <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
-                        <a id="MangerTab" href="/" onClick={() => window.location.reload()}>Buvette / Resto</a>
-                        <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
-                        <a id="VehiculesTab" href="/" onClick={() => window.location.reload()}>Véhicules exposés</a>
-                    </div>
-                </Link>
-                <Link id="HistoriqueTab" to="/historique"
-                      onClick={() => this.setActiveTab(document.getElementById("HistoriqueTab"))}>Historique</Link>
-                <Link id="ContactTab" to="/"
-                      onClick={() => this.setActiveTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
-                <Link to="/" className="toggle" onClick={() => this.handleOnClickToggle()}>
-                    <i className={this.toggleIcon()}/>
-                </Link>
-
-            </div>
-        )
-
-        return (<div>{appTopBar}</div>);
-    }
-
-    componentDidMount() {
-        let activeComponent = document.getElementById(this.state.activeTab);
-        if (activeComponent !== null) {
-            activeComponent.classList.add("active");
-        }
-    }
-
     setActiveTab = (tab) => {
         this.handleOnClickDropdownTab();
         const elements = document.body.getElementsByTagName("*");
@@ -97,6 +53,59 @@ class TopBar extends Component {
 
     handleOnClickDropdownTab = () => {
         this.handleOnClickToggle();
+    }
+
+    handleGoToCard = (cardId) => {
+        const element = document.querySelector(cardId);
+        const y = element.getBoundingClientRect().top + window.pageYOffset;
+
+        window.scrollTo({top: y - 105, behavior: 'smooth'});
+
+        // À VOIR ; peut poser problème si la taille d'écran change en cours de route
+        this.handleOnClickToggle();
+    }
+
+    componentDidMount() {
+        let activeComponent = document.getElementById(this.state.activeTab);
+        if (activeComponent !== null) {
+            activeComponent.classList.add("active");
+        }
+    }
+
+    render() {
+        const appTopBar = (
+            <div className={"navbar " + this.state.toggleClick} id="myTopNav" ref={this.props.carRef}>
+                <Link id="HomeTab" to="/"
+                      onClick={() => this.setActiveTab(document.getElementById("HomeTab"))}>Accueil</Link>
+                <Link className="dropdown" id="CassonTab" to="/"
+                      onClick={() => this.handleGoToCard("#casson-card")}>
+                    Casson 2022
+                    <i style={{paddingLeft: "15px"}} className="fa fa-caret-down"/>
+                    <div
+                        className="dropdown-content">
+                        <a id="ProgrammeTab" href="/" onClick={() => this.handleOnClickDropdownTab()}>Programme</a>
+                        <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
+                        <a id="BaladeTab" href="/" onClick={() => window.location.reload()}>Balade</a>
+                        <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
+                        <a id="BalTab" href="/" onClick={() => window.location.reload()}>Bal du samedi soir</a>
+                        <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
+                        <a id="MangerTab" href="/" onClick={() => window.location.reload()}>Buvette / Resto</a>
+                        <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
+                        <a id="VehiculesTab" href="/" onClick={() => window.location.reload()}>Véhicules exposés</a>
+                    </div>
+                </Link>
+                <Link id="HistoriqueTab" to="/"
+                      onClick={() => this.handleGoToCard("#history-card")}>Historique</Link>
+                <Link id="ContactTab" to="/"
+                      onClick={() => this.setActiveTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
+                <Link to="/" className="toggle" onClick={() => this.handleOnClickToggle()}>
+                    <i className={this.toggleIcon()}/>
+                </Link>
+
+            </div>
+        )
+
+        return (<div>{appTopBar}</div>);
     }
 }
 

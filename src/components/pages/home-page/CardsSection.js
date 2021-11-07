@@ -56,7 +56,7 @@ export default class CardsSection extends Component {
                     <div className={"card-body"} id={"casson-card"}>
                         <img className={"photo"} src={photo2} alt=""/>
                         <div className={"pitch-container"}>
-                            <h3 className={"pitch-title"}>Le bon Casson</h3>
+                            <h3 className={"pitch-title"}>Casson 2022</h3>
                             <hr/>
                             <div className={"pitch-content"}>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, aspernatur dolor, eos
