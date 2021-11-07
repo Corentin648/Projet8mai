@@ -57,12 +57,15 @@ class TopBar extends Component {
 
     handleGoToCard = (cardId) => {
         const element = document.querySelector(cardId);
-        const y = element.getBoundingClientRect().top + window.pageYOffset;
 
-        window.scrollTo({top: y - 105, behavior: 'smooth'});
+        if (element !== null) {
+            const y = element.getBoundingClientRect().top + window.pageYOffset;
 
-        // À VOIR ; peut poser problème si la taille d'écran change en cours de route
-        this.handleOnClickToggle();
+            window.scrollTo({top: y - 105, behavior: 'smooth'});
+
+            // À VOIR ; peut poser problème si la taille d'écran change en cours de route
+            this.handleOnClickToggle();
+        }
     }
 
     componentDidMount() {
