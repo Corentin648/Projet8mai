@@ -20,10 +20,6 @@ export default class PresentationSection extends Component {
         window.scrollTo({top: y, behavior: 'smooth'});
     }
 
-    handlerDownloadInscriptionForm = () => {
-        /* TODO : make it download inscription pdf */
-    }
-
     calculateCountDown = () => {
         const countDownDate = new Date("May 8, 2022 00:00:00").getTime();
         const now = new Date().getTime();
@@ -60,10 +56,12 @@ export default class PresentationSection extends Component {
                     </div>
                     <h2 id="casson-countdown">Casson J - {this.state.countDown}</h2>
 
-                    <button id={"inscription-form-button"}
-                            onClick={() => this.handlerDownloadInscriptionForm()}>Formulaire d'inscription pour
-                        exposants
-                    </button>
+                    <a id={"inscription-form-button"}
+                       href={process.env.PUBLIC_URL + "/fiche_inscription_casson_2022.pdf"}
+                       target="_blank"
+                       rel="noreferrer" download>
+                        Formulaire d'inscription pour exposants
+                    </a>
 
                     <button id={"discover-asso-button"} onClick={() => this.handlerGoToDescription()}>
                         <div style={{color: "#afaf20"}}>Découvrir l'asso</div>
