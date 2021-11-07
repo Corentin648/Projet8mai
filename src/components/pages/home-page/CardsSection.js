@@ -39,11 +39,11 @@ export default class CardsSection extends Component {
     render() {
         return (
             <section id={"cards-section"} style={{width: "100%", height: "max-content", overflow: "hidden"}}>
-                <div className={"zero-padding"} style={{width: "100%", height: "150px"}}/>
+                <div className={"zero-padding"}/>
                 <div id={"cards-wrapper"}>
                     <div className={"card-body"} id={"history-card"}>
                         <div className={"pitch-container"}>
-                            <h3 className={"pitch-title"}>Historique de l'évènement</h3>
+                            <h3 className={"default-title"}>Historique de l'évènement</h3>
                             <hr/>
                             <div className={"pitch-content"}>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, aspernatur dolor, eos
@@ -56,7 +56,7 @@ export default class CardsSection extends Component {
                     <div className={"card-body"} id={"casson-card"}>
                         <img className={"photo"} src={photo2} alt=""/>
                         <div className={"pitch-container"}>
-                            <h3 className={"pitch-title"}>Casson 2022</h3>
+                            <h3 className={"default-title"}>Casson 2022</h3>
                             <hr/>
                             <div className={"pitch-content"}>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, aspernatur dolor, eos
@@ -66,7 +66,7 @@ export default class CardsSection extends Component {
                         </div>
                     </div>
                 </div>
-                <div className={"zero-padding"} style={{width: "100%", height: "150px"}}/>
+                <div className={"zero-padding"}/>
             </section>
         );
     }

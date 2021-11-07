@@ -28,6 +28,16 @@ $background-color: #FEFEE8; /* blanc cassé */
 
 $navbar-height: 70px;
 
+.zero-padding {
+  width: 100%;
+  height: 150px;
+}
+
+.default-title {
+  color: $yellow-text;
+  font-size: 25px;
+}
+
 %navbar-tab-hover {
   background-color: $green-button-color;
   color: $green-button-text;

@@ -13,9 +13,11 @@ export default class HomePage extends Component {
 
     handleResize = () => {
         const presentationPanel = document.getElementById("presentation-panel");
-        this.setState({
-            backgroundHeight: Math.max(window.visualViewport.height, presentationPanel.offsetHeight + 85)
-        });
+        if (presentationPanel !== null) {
+            this.setState({
+                backgroundHeight: Math.max(window.visualViewport.height, presentationPanel.offsetHeight + 85)
+            });
+        }
     }
 
     componentDidMount() {
