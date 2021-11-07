@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './TopBar.scss';
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 
 class TopBar extends Component {
 
@@ -96,9 +96,9 @@ class TopBar extends Component {
                 </Link>
                 <Link id="HistoriqueTab" to="/"
                       onClick={() => this.handleGoToCard("#history-card")}>Historique</Link>
-                <Link id="ContactTab" to="/"
+                <Link id="ContactTab" to="/contact"
                       onClick={() => this.setActiveTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
-                <Link to="/" className="toggle" onClick={() => this.handleOnClickToggle()}>
+                <Link to={this.props.location.pathname} className="toggle" onClick={() => this.handleOnClickToggle()}>
                     <i className={this.toggleIcon()}/>
                 </Link>
 
@@ -109,4 +109,4 @@ class TopBar extends Component {
     }
 }
 
-export default TopBar;
+export default withRouter(TopBar);

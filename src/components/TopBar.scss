@@ -41,8 +41,8 @@
     padding-right: 10px;
     text-decoration: none;
     font-size: 23px;
-    height: $navbar-height;
-    line-height: 70px;
+    height: $navbar-height - 10px;
+    line-height: $navbar-height - 10px;
 
     // Active tab
     &.active {
@@ -125,9 +125,9 @@
         display: block;
         position: absolute;
         right: 0;
-        top: 0;
+        top: 5px;
         padding: 0;
-        margin-right: 0;
+        margin-right: 5px;
         width: 60px;
         text-align: center;
       }
@@ -143,6 +143,10 @@
     border-radius: 0;
     top: 0;
     margin: 0;
+
+    .toggle {
+      top: 0;
+    }
 
     // All tabs are displayed
     a:not(.toggle) {

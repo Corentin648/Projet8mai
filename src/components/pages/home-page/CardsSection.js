@@ -38,7 +38,7 @@ export default class CardsSection extends Component {
 
     render() {
         return (
-            <section id={"cards-section"} style={{width: "100%", height: "100vh", overflow: "hidden"}}>
+            <section id={"cards-section"} style={{width: "100%", height: "max-content", overflow: "hidden"}}>
                 <div className={"zero-padding"} style={{width: "100%", height: "150px"}}/>
                 <div id={"cards-wrapper"}>
                     <div className={"card-body"} id={"history-card"}>
@@ -66,6 +66,7 @@ export default class CardsSection extends Component {
                         </div>
                     </div>
                 </div>
+                <div className={"zero-padding"} style={{width: "100%", height: "150px"}}/>
             </section>
         );
     }
