@@ -38,7 +38,7 @@ export default class PresentationSection extends Component {
 
     render() {
         return (
-            <section style={{width: "100%", height: this.props.backgroundHeight}}>
+            <section style={{width: "100%", height: this.props.backgroundHeight, position: "relative"}}>
 
                 <div className={"_overflow-hidden"}>
                     <div className={"photo-row"} style={{height: this.props.backgroundHeight}}>
