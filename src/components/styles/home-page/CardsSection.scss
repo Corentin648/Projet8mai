@@ -22,9 +22,19 @@
     margin-top: 50px;
   }
 
-  .photo {
+  .photo-wrapper {
+    position: relative;
     border: 5px solid $dark-green-text;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .5);
+    width: 40%;
+    padding-bottom: 26.67%; // ratio : 40% * 320px / 48px (logo size)
+
+    .photo {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+    }
   }
 
   .pitch-container {
@@ -49,6 +59,29 @@
   &:nth-child(2n) {
     animation: slide-left-to-center 1.5s forwards;
     margin-left: -200px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .card-body {
+
+    &:nth-child(2n+1) {
+      flex-direction: column;
+    }
+
+    &:nth-child(2n) {
+      flex-direction: column-reverse;
+    }
+
+    .pitch-container {
+      width: 100%;
+    }
+
+    .photo-wrapper {
+      margin-top: 30px;
+      width: 100%;
+      padding-bottom: 66.67%; // ratio : 100% * 320px / 48px (logo size)
+    }
   }
 }
 
