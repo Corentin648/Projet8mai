@@ -27,9 +27,9 @@
   flex-direction: column;
   align-items: center;
 
-  background-color: rgba(0, 0, 0, 0.7); /* Black w/opacity/see-through */
+  background-color: rgba(0, 0, 0, 0.7);
   font-weight: bold;
-  border: 10px solid $dark-green-text; /* vert foncé de la plaque */
+  border: 10px solid $dark-green-text;
   z-index: 1;
 
   min-height: unset;
@@ -100,7 +100,17 @@
 }
 
 @media screen and (max-width: 750px) {
+  .photo-row {
+    background-color: $background-color;
+    animation: none;
+
+    .photo {
+      display: none;
+    }
+  }
+
   #presentation-panel {
+    border: 5px solid $dark-green-text;
 
     #inscription-form-button {
       width: 70%;
@@ -111,6 +121,10 @@
 
     #discover-asso-button {
       margin-top: 40%;
+    }
+
+    #discover-asso-button {
+      font-size: 3vw;
     }
   }
 }

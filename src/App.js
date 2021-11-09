@@ -1,6 +1,7 @@
 import './App.scss';
 import {HashRouter, Route, Switch} from "react-router-dom";
 import TopBar from "./components/TopBar";
+import Footer from "./components/Footer";
 import HomePage from "./components/pages/HomePage";
 import Historique from "./components/Historique";
 import ContactPage from "./components/pages/contact-page/ContactPage";
@@ -30,6 +31,8 @@ class App extends Component {
                         <Route path={"/contact"} component={ContactPage}/>
                         <Route path={"/"} component={() => <div>The page doesn't exist</div>}/>
                     </Switch>
+
+                    <Footer/>
                 </div>
             </HashRouter>
         );
