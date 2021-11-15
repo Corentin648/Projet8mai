@@ -49,25 +49,27 @@ export default class PresentationSection extends Component {
                     </div>
                 </div>
 
-                <div id={"presentation-panel"}>
-                    <div id="logo-container">
-                        <img id={"logo"}
-                             src={logo_pva} alt={""}/>
+                <div id={"presentation-container"}>
+                    <div id={"presentation-panel"}>
+                        <div id="logo-container">
+                            <img id={"logo"}
+                                 src={logo_pva} alt={""}/>
+                        </div>
+                        <h2 id="casson-countdown">Casson J - {this.state.countDown}</h2>
+
+                        <a id={"inscription-form-button"}
+                           href={process.env.PUBLIC_URL + "/fiche_inscription_casson_2022.pdf"}
+                           target="_blank"
+                           rel="noreferrer" download>
+                            Formulaire d'inscription pour exposants
+                        </a>
+
+                        <button id={"discover-asso-button"} onClick={() => this.handlerGoToDescription()}>
+                            <div style={{color: "#afaf20"}}>Découvrir l'asso</div>
+                            <i style={{color: "#afaf20"}} id={"discover-asso-arrow"} className="fa fa-caret-down"/>
+                        </button>
+
                     </div>
-                    <h2 id="casson-countdown">Casson J - {this.state.countDown}</h2>
-
-                    <a id={"inscription-form-button"}
-                       href={process.env.PUBLIC_URL + "/fiche_inscription_casson_2022.pdf"}
-                       target="_blank"
-                       rel="noreferrer" download>
-                        Formulaire d'inscription pour exposants
-                    </a>
-
-                    <button id={"discover-asso-button"} onClick={() => this.handlerGoToDescription()}>
-                        <div style={{color: "#afaf20"}}>Découvrir l'asso</div>
-                        <i style={{color: "#afaf20"}} id={"discover-asso-arrow"} className="fa fa-caret-down"/>
-                    </button>
-
                 </div>
             </section>
         );

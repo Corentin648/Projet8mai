@@ -13,15 +13,20 @@
   animation-delay: 1s;
 }
 
-#presentation-panel {
-
+#presentation-container {
   position: absolute;
-  top: $navbar-height + 15;
+  top: $navbar-height + 50;
   bottom: 0;
   left: 0;
   right: 0;
-  /* À réfléchir pour à terme...*/
-  margin: auto;
+  height: max-content;
+  width: 100%;
+  display: grid;
+}
+
+#presentation-panel {
+  justify-self: center;
+  align-self: center;
 
   display: flex;
   flex-direction: column;
