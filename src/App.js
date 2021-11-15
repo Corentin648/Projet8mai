@@ -13,9 +13,38 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        this.carRef = new React.createRef();
+        this.state = {
+            activeTab: "HomeTab"
+        }
+
+        /* Get active tab info from local storage */
+        const state = localStorage.getItem('state');
+        if (state) {
+            this.state = JSON.parse(state);
+        }
     }
 
+    /* Allows to keep active tab info while refreshing page */
+    saveStateToLocalStorage = () => {
+        localStorage.setItem('state', JSON.stringify(this.state));
+    }
+
+    /* Function called in TopBar and Footer */
+    setActiveTab = (tab) => {
+        const elements = document.body.getElementsByTagName("*");
+        const inputList = Array.prototype.slice.call(elements);
+        for (let i = 0; i < inputList.length; i++) {
+            if (inputList[i].classList.contains("active")) {
+                inputList[i].classList.remove("active");
+            }
+        }
+        tab.classList.add("active");
+        this.setState({
+            activeTab: tab.id
+        }, () => {
+            this.saveStateToLocalStorage();
+        });
+    }
 
     render() {
         return (
@@ -23,7 +52,7 @@ class App extends Component {
             <HashRouter forceRefresh={"true"}>
                 <div className="App">
 
-                    <TopBar carRef={this.carRef}/>
+                    <TopBar setActiveTab={this.setActiveTab} activeTab={this.state.activeTab}/>
 
                     <Switch>
                         <Route exact path={"/"} component={() => <HomePage carRef={this.carRef}/>}/>
@@ -32,7 +61,7 @@ class App extends Component {
                         <Route path={"/"} component={() => <div>The page doesn't exist</div>}/>
                     </Switch>
 
-                    <Footer/>
+                    <Footer setActiveTab={this.setActiveTab}/>
                 </div>
             </HashRouter>
         );

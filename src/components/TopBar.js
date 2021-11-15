@@ -7,36 +7,13 @@ class TopBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            activeTab: "HomeTab",
             toggleClick: ""
         }
-
-        //localStorage.clear();
-        const state = localStorage.getItem('state');
-        if (state) {
-            this.state = JSON.parse(state);
-        }
     }
 
-    saveStateToLocalStorage = () => {
-        localStorage.setItem('state', JSON.stringify(this.state));
-    }
-
-    setActiveTab = (tab) => {
+    setActiveTabAndHandleDropdownTab = (tab) => {
         this.handleOnClickDropdownTab();
-        const elements = document.body.getElementsByTagName("*");
-        const inputList = Array.prototype.slice.call(elements);
-        for (let i = 0; i < inputList.length; i++) {
-            if (inputList[i].classList.contains("active")) {
-                inputList[i].classList.remove("active");
-            }
-        }
-        tab.classList.add("active");
-        this.setState({
-            activeTab: tab.id
-        }, () => {
-            this.saveStateToLocalStorage();
-        });
+        this.props.setActiveTab(tab);
     }
 
     handleOnClickToggle = () => {
@@ -69,7 +46,7 @@ class TopBar extends Component {
     }
 
     componentDidMount() {
-        let activeComponent = document.getElementById(this.state.activeTab);
+        let activeComponent = document.getElementById(this.props.activeTab);
         if (activeComponent !== null) {
             activeComponent.classList.add("active");
         }
@@ -79,7 +56,7 @@ class TopBar extends Component {
         const appTopBar = (
             <div className={"navbar " + this.state.toggleClick} id="myTopNav" ref={this.props.carRef}>
                 <Link id="HomeTab" to="/"
-                      onClick={() => this.setActiveTab(document.getElementById("HomeTab"))}>Accueil</Link>
+                      onClick={() => this.setActiveTabAndHandleDropdownTab(document.getElementById("HomeTab"))}>Accueil</Link>
                 <Link className="dropdown" id="CassonTab" to="/"
                       onClick={() => this.handleGoToCard("#casson-card")}>
                     Casson 2022
@@ -100,7 +77,7 @@ class TopBar extends Component {
                 <Link id="HistoriqueTab" to="/"
                       onClick={() => this.handleGoToCard("#history-card")}>Historique</Link>
                 <Link id="ContactTab" to="/contact"
-                      onClick={() => this.setActiveTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
+                      onClick={() => this.setActiveTabAndHandleDropdownTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
                 <Link to={this.props.location.pathname} className="toggle" onClick={() => this.handleOnClickToggle()}>
                     <i className={this.toggleIcon()}/>
                 </Link>

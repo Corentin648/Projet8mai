@@ -3,6 +3,13 @@ import '../../styles/contact-page/ContactPage.scss';
 
 export default class ContactPage extends Component {
 
+    componentDidMount() {
+        const element = document.getElementById("contact-section");
+        const y = element.getBoundingClientRect().top + window.pageYOffset;
+
+        window.scrollTo({top: y, behavior: 'smooth'});
+    }
+
     render() {
         return (
             <section id={"contact-section"}>

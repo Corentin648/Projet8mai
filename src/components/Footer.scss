@@ -1,17 +1,13 @@
 @import "styles/index";
 
 #content-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   background-color: #333333;
 
   .footer-item {
-
-    &:not(:first-child) {
-      margin-left: 10%;
-    }
+    align-self: center;
+    justify-self: center;
 
     .link {
       text-decoration: none;
@@ -22,6 +18,17 @@
 
 @media screen and (max-width: 750px) {
   #content-container {
-    flex-direction: column;
+    grid-template-columns: none;
+
+    .footer-item {
+
+      &:first-child {
+        margin-top: 20px;
+      }
+
+      &:last-child {
+        margin-bottom: 20px;
+      }
+    }
   }
 }

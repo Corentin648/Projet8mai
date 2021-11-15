@@ -22,6 +22,11 @@ export default class HomePage extends Component {
 
     componentDidMount() {
 
+        const element = document.getElementById("home-page");
+        const y = element.getBoundingClientRect().top + window.pageYOffset;
+
+        window.scrollTo({top: y, behavior: 'smooth'});
+
         this.handleResize();
         window.addEventListener('resize', () => this.handleResize());
     }
@@ -30,7 +35,7 @@ export default class HomePage extends Component {
     render() {
 
         return (
-            <div>
+            <div id={"home-page"}>
                 <PresentationSection backgroundHeight={this.state.backgroundHeight}/>
                 <CardsSection/>
                 <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus doloremque ea, ex in ipsum minus
