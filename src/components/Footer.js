@@ -12,19 +12,25 @@ class Footer extends Component {
                         <Link className={"link"} id={"contact-link"} to="/contact"
                               onClick={() => this.props.setActiveTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
                         <span style={{marginLeft: "10px", color: "white"}}>|</span>
-                        <Link className={"link"} id={"legal-notice-link"} to="/historique"
-                              style={{marginLeft: "10px"}}>Mentions
-                            legales</Link>
+                        <Link className={"link"} id={"legal-notice-link"} to="/"
+                              onClick={() => this.props.setActiveTab(document.getElementById("HomeTab"))}
+                              style={{marginLeft: "10px"}}>
+                            Mentions legales
+                        </Link>
                     </div>
                     <div className={"footer-item"} id={"logo-item"}>
-                        <img id={"asso-logo"}
-                             src={process.env.PUBLIC_URL + "/logo192.png"} alt={""}/>
+                        <Link className={"link"} id={"home-link"} to="/"
+                              onClick={() => this.props.setActiveTab(document.getElementById("HomeTab"))}>
+                            <img id={"asso-logo"} src={process.env.PUBLIC_URL + "/logo192.png"} alt={""}/>
+                        </Link>
                     </div>
                     <div className={"footer-item"} id={"networks-item"}>
-                        <Link className="network-icon" id="fb-icon" to="/">
+                        <a className="network-icon" id="fb-icon" href={"https://facebook.com"}
+                           target={"_blank"}
+                           rel={"noopener noreferrer"}>
                             <i style={{color: "white"}}
                                className="fa fa-facebook-square fa-3x"/>
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </section>
