@@ -46,9 +46,10 @@ export default class CardsSection extends Component {
                             <h3 className={"default-title"}>Historique de l'évènement</h3>
                             <hr/>
                             <div className={"pitch-content"}>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, aspernatur dolor, eos
-                                expedita hic, id in iure laudantium libero magni nam natus necessitatibus nostrum
-                                numquam perspiciatis quas quo recusandae vel.
+                                L’association <span style={{fontWeight: "bold"}}>Patrimoine Véhicules Anciens</span> a
+                                été fondée il y a 3 ans principalement pour
+                                l’organisation de ce week-end commémoratif devenu aujourd’hui un rituel bisannuel sur le
+                                sol Cassonnais.
                             </div>
                         </div>
                         <div className={"photo-wrapper"}>
@@ -63,9 +64,11 @@ export default class CardsSection extends Component {
                             <h3 className={"default-title"}>Casson 2022</h3>
                             <hr/>
                             <div className={"pitch-content"}>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, aspernatur dolor, eos
-                                expedita hic, id in iure laudantium libero magni nam natus necessitatibus nostrum
-                                numquam perspiciatis quas quo recusandae vel.
+                                Les amoureux de véhicules de l’association PVA travaillent actuellement sur l’organise
+                                de la
+                                4 e édition de la reconstitution d’un camp américain. Il prendra place, les <span
+                                style={{fontWeight: "bold"}}>7, 8 et 9 Mai 2022</span>
+                                , comme à son habitude, dans le parc du château du plessis à Casson.
                             </div>
                         </div>
                     </div>
