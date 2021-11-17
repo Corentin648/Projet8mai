@@ -4,6 +4,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: #333333;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
   .footer-item {
     align-self: center;
@@ -12,6 +14,10 @@
     .link {
       text-decoration: none;
       color: white;
+    }
+
+    #home-link {
+      @include image-scaling(#logo-container, #logo, 200px, 0.4208);
     }
   }
 }
@@ -23,11 +29,11 @@
     .footer-item {
 
       &:first-child {
-        margin-top: 20px;
+        margin-bottom: 40px;
       }
 
       &:last-child {
-        margin-bottom: 20px;
+        margin-top: 40px;
       }
     }
   }

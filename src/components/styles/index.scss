@@ -44,6 +44,21 @@ $navbar-height: 70px;
   transition: 0.4s;
 }
 
+@mixin image-scaling($container, $image, $width, $ratio) {
+  #{$container} {
+    position: relative;
+    width: $width;
+    padding-bottom: $width * $ratio;
+
+    #{$image} {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+    }
+  }
+}
+
 %navbar-tab-hover {
   @include navbar-tab-hover;
 }

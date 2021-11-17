@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Footer.scss';
 import {Link, withRouter} from "react-router-dom";
+import logo_pva from "../assets/logo_pva_monochrome.png";
 
 class Footer extends Component {
 
@@ -21,7 +22,9 @@ class Footer extends Component {
                     <div className={"footer-item"} id={"logo-item"}>
                         <Link className={"link"} id={"home-link"} to="/"
                               onClick={() => this.props.setActiveTab(document.getElementById("HomeTab"))}>
-                            <img id={"asso-logo"} src={process.env.PUBLIC_URL + "/logo192.png"} alt={""}/>
+                            <div id={"logo-container"}>
+                                <img id={"logo"} src={logo_pva} alt={""}/>
+                            </div>
                         </Link>
                     </div>
                     <div className={"footer-item"} id={"networks-item"}>

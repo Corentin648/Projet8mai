@@ -46,18 +46,8 @@
   /* Doesn't work for Mozilla */
   backdrop-filter: blur(3px);
 
-  #logo-container {
-    position: relative;
-    width: 80%;
-    padding-bottom: 33.66%; // ratio : 80% * 324px / 770px (logo size)
-
-    #logo {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-    }
-  }
+  // Ratio : 324px / 770px = 0.4208
+  @include image-scaling(#logo-container, #logo, 80%, 0.4208);
 
   #casson-countdown {
     font-size: 5vw;
