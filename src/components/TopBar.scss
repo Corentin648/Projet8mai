@@ -108,33 +108,53 @@
 }
 
 /* Toggle button not visible for large screen */
-.navbar .toggle {
+.navbar #toggle, #asso-name {
   display: none;
 }
 
+/* When topbar is not expanded */
 @media screen and (max-width: 750px) {
   .navbar {
     display: block;
     z-index: 3;
 
-    a {
+    a:not(#toggle) {
       display: none;
+    }
 
-      // Only toggle is displayed
-      &.toggle {
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 5px;
-        padding: 0;
-        margin-right: 5px;
-        width: 60px;
+    // Only header is displayed
+    #navbar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: $navbar-height;
+
+      #asso-name {
+        display: unset;
+        margin-left: 5%;
+        color: white;
+      }
+
+      #toggle {
+        display: unset;
+        width: $navbar-height - 10px;
+        height: $navbar-height - 10px;
+        line-height: $navbar-height - 10px;
+        border-radius: 10px;
         text-align: center;
+        font-size: 23px;
+        color: white;
+
+        &:hover {
+          @include navbar-tab-hover;
+        }
       }
     }
+
   }
 }
 
+/* When topbar is expanded */
 @media screen and (max-width: 750px) {
   .navbar.expand-tabs {
     height: 100%;
@@ -144,19 +164,32 @@
     top: 0;
     margin: 0;
 
-    .toggle {
-      top: 0;
-    }
-
     // All tabs are displayed
-    a:not(.toggle) {
+    a:not(#toggle) {
       display: block;
       width: 100%;
       height: auto;
       border-radius: 0;
+    }
 
-      &:hover {
-        width: 100%;
+    > a {
+      line-height: $navbar-height;
+    }
+
+    #navbar-header {
+      display: unset;
+
+      #asso-name {
+        display: none;
+      }
+
+      #toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 5px;
+        height: $navbar-height;
+        line-height: $navbar-height;
       }
     }
 

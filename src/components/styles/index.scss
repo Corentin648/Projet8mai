@@ -38,9 +38,13 @@ $navbar-height: 70px;
   font-size: 25px;
 }
 
-%navbar-tab-hover {
+@mixin navbar-tab-hover {
   background-color: $green-button-color;
   color: $green-button-text;
   transition: 0.4s;
+}
+
+%navbar-tab-hover {
+  @include navbar-tab-hover;
 }
 

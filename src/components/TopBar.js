@@ -78,9 +78,13 @@ class TopBar extends Component {
                       onClick={() => this.handleGoToCard("#history-card")}>Historique</Link>
                 <Link id="ContactTab" to="/contact"
                       onClick={() => this.setActiveTabAndHandleDropdownTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
-                <Link to={this.props.location.pathname} className="toggle" onClick={() => this.handleOnClickToggle()}>
-                    <i className={this.toggleIcon()}/>
-                </Link>
+                <div id={"navbar-header"}>
+                    <h3 id={"asso-name"}>Patrimoine véhicules anciens</h3>
+                    <Link to={this.props.location.pathname} id={"toggle"}
+                          onClick={() => this.handleOnClickToggle()}>
+                        <i className={this.toggleIcon()}/>
+                    </Link>
+                </div>
 
             </div>
         )
