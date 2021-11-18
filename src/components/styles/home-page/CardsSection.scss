@@ -15,6 +15,7 @@
 .card-body {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 
   /* Space between cards */
@@ -27,7 +28,7 @@
     border: 5px solid $dark-green-text;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .5);
     width: 40%;
-    padding-bottom: 26.67%; // ratio : 40% * 320px / 48px (logo size)
+    padding-bottom: 26.67%; // ratio : 40% * 320px / 480px (logo size)
 
     .photo {
       position: absolute;
