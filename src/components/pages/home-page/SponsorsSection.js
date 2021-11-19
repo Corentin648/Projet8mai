@@ -10,7 +10,7 @@ export default class SponsorsSection extends Component {
             <section id={"sponsors-section"} style={{width: "100%", height: "max-content", overflow: "hidden"}}>
                 <h1 id={"sponsors-header"} className={"default-title"}>Sponsors <hr
                     style={{position: "absolute", left: "0", width: "100%"}}/></h1>
-                <div id={"sponsors-container"}>
+                {/*<div id={"sponsors-container"}>
                     <img className={"sponsor"} style={{gridArea: "one"}} src="https://via.placeholder.com/100" alt=""/>
                     <div style={{gridArea: "empty-one"}}/>
                     <img className={"sponsor"} style={{gridArea: "two"}} src="https://via.placeholder.com/100" alt=""/>
@@ -40,7 +40,34 @@ export default class SponsorsSection extends Component {
                     <div style={{gridArea: "empty-ten"}}/>
                     <img className={"sponsor"} style={{gridArea: "eleven"}} src="https://via.placeholder.com/100"
                          alt=""/>
+                </div>*/}
+
+                <div id={"sponsors-container"}>
+                    <img className={"sponsor"} style={{position: "absolute", top: "0", left: "0"}}
+                         src="https://via.placeholder.com/100" alt=""/>
+                    <img className={"sponsor"} style={{position: "absolute", top: "0", left: "200px"}}
+                         src="https://via.placeholder.com/100" alt=""/>
+                    <img className={"sponsor"} style={{position: "absolute", top: "0", left: "400px"}}
+                         src="https://via.placeholder.com/100" alt=""/>
+                    <img className={"sponsor"} style={{position: "absolute", top: "0", left: "600px"}}
+                         src="https://via.placeholder.com/100" alt=""/>
+                    <img className={"sponsor"} style={{position: "absolute", top: "120px", left: "100px"}}
+                         src="https://via.placeholder.com/100" alt=""/>
+                    <img className={"sponsor"} style={{position: "absolute", top: "120px", left: "300px"}}
+                         src="https://via.placeholder.com/100" alt=""/>
+                    <img className={"sponsor"} style={{position: "absolute", top: "120px", left: "500px"}}
+                         src="https://via.placeholder.com/100" alt=""/>
+                    <img className={"sponsor"} style={{position: "absolute", top: "240px", left: "0"}}
+                         src="https://via.placeholder.com/100" alt=""/>
+                    <img className={"sponsor"} style={{position: "absolute", top: "240px", left: "200px"}}
+                         src="https://via.placeholder.com/100" alt=""/>
+                    <img className={"sponsor"} style={{position: "absolute", top: "240px", left: "400px"}}
+                         src="https://via.placeholder.com/100" alt=""/>
+                    <img className={"sponsor"} style={{position: "absolute", top: "240px", left: "600px"}}
+                         src="https://via.placeholder.com/100" alt=""/>
+
                 </div>
+
                 <div className={"zero-padding"}/>
             </section>
         );

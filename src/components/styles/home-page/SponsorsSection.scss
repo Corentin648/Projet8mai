@@ -11,21 +11,29 @@
     margin-bottom: 100px;
   }
 
+  /*  #sponsors-container {
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+
+      display: grid;
+      grid-auto-flow: dense;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-row-gap: 30px;
+      justify-items: center;
+      grid-template-areas:
+      "one empty-one two empty-two three empty-three four"
+      "empty-four five empty-five six empty-six seven empty-seven"
+      "eight empty-eight nine empty-nine ten empty-ten eleven";
+
+    }*/
+
   #sponsors-container {
-    width: 60%;
     margin-left: auto;
     margin-right: auto;
-
-    display: grid;
-    grid-auto-flow: dense;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-row-gap: 30px;
-    justify-items: center;
-    grid-template-areas:
-    "one empty-one two empty-two three empty-three four"
-    "empty-four five empty-five six empty-six seven empty-seven"
-    "eight empty-eight nine empty-nine ten empty-ten eleven";
-
+    position: relative;
+    width: 700px;
+    height: 450px;
   }
 }
