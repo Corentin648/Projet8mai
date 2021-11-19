@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PresentationSection from './home-page/PresentationSection';
 import CardsSection from "./home-page/CardsSection";
+import SponsorsSection from "./home-page/SponsorsSection";
 
 export default class HomePage extends Component {
 
@@ -45,6 +46,7 @@ export default class HomePage extends Component {
             <div id={"home-page"}>
                 <PresentationSection backgroundHeight={this.state.backgroundHeight}/>
                 <CardsSection/>
+                <SponsorsSection/>
             </div>
         );
     }
