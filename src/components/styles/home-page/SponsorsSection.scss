@@ -1,5 +1,13 @@
 @import '../index.scss';
 
+@mixin splash-logo($x, $y) {
+  --x: #{$x};
+  --y: #{$y};
+  margin-left: -$x;
+  margin-top: -$y;
+  animation: splash 1.5s forwards;
+}
+
 #sponsors-section {
   background-color: $background-color;
 
@@ -11,29 +19,74 @@
     margin-bottom: 100px;
   }
 
-  /*  #sponsors-container {
-      width: 60%;
-      margin-left: auto;
-      margin-right: auto;
-
-      display: grid;
-      grid-auto-flow: dense;
-      grid-template-columns: repeat(7, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      grid-row-gap: 30px;
-      justify-items: center;
-      grid-template-areas:
-      "one empty-one two empty-two three empty-three four"
-      "empty-four five empty-five six empty-six seven empty-seven"
-      "eight empty-eight nine empty-nine ten empty-ten eleven";
-
-    }*/
-
-  #sponsors-container {
+  .sponsors-container {
     margin-left: auto;
     margin-right: auto;
     position: relative;
     width: 700px;
-    height: 450px;
+    height: 340px;
+
+    .sponsor {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .sponsors-container.splash {
+    #one {
+      @include splash-logo(-300px, -120px);
+    }
+
+    #two {
+      @include splash-logo(-100px, -120px);
+    }
+
+    #three {
+      @include splash-logo(100px, -120px);
+    }
+
+    #four {
+      @include splash-logo(300px, -120px);
+    }
+
+    #five {
+      @include splash-logo(-200px, 0);
+    }
+
+    #six {
+      @include splash-logo(0, 0);
+    }
+
+    #seven {
+      @include splash-logo(200px, 0);
+    }
+
+    #eight {
+      @include splash-logo(-300px, 120px);
+    }
+
+    #nine {
+      @include splash-logo(-100px, 120px);
+    }
+
+    #ten {
+      @include splash-logo(100px, 120px);
+    }
+
+    #eleven {
+      @include splash-logo(300px, 120px);
+    }
+  }
+}
+
+@keyframes splash {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(var(--x), var(--y));
   }
 }
