@@ -1,11 +1,38 @@
 @import '../index.scss';
 
+$logo-size: 100px;
+
+$columns-gap: $logo-size;
+$rows-gap: 20px;
+
+$x-gap-between-logos: $logo-size + $columns-gap;
+$y-gap-between-logos: $logo-size + $rows-gap;
+
 @mixin splash-logo($x, $y) {
   --x: #{$x};
   --y: #{$y};
+
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100px;
+  height: 100px;
   margin-left: -$x;
   margin-top: -$y;
+
   animation: splash 1.5s forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes splash {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(var(--x), var(--y));
+  }
 }
 
 #sponsors-section {
@@ -27,66 +54,75 @@
     height: 340px;
 
     .sponsor {
-      width: 100px;
-      height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: none;
     }
   }
 
   .sponsors-container.splash {
     #one {
-      @include splash-logo(-300px, -120px);
+      @include splash-logo(-($logo-size + $x-gap-between-logos), -$y-gap-between-logos);
+      top: 0;
+      left: 0;
     }
 
     #two {
-      @include splash-logo(-100px, -120px);
+      @include splash-logo(-$logo-size, -$y-gap-between-logos);
+      top: 0;
+      left: $x-gap-between-logos;
     }
 
     #three {
-      @include splash-logo(100px, -120px);
+      @include splash-logo($logo-size, -$y-gap-between-logos);
+      top: 0;
+      left: 2 * $x-gap-between-logos;
     }
 
     #four {
-      @include splash-logo(300px, -120px);
+      @include splash-logo($x-gap-between-logos + $logo-size, -$y-gap-between-logos);
+      top: 0;
+      left: 3 * $x-gap-between-logos;
     }
 
     #five {
-      @include splash-logo(-200px, 0);
+      @include splash-logo(-$x-gap-between-logos, 0);
+      top: $y-gap-between-logos;
+      left: $logo-size;
     }
 
     #six {
       @include splash-logo(0, 0);
+      top: $y-gap-between-logos;
+      left: $logo-size + $x-gap-between-logos;
     }
 
     #seven {
-      @include splash-logo(200px, 0);
+      @include splash-logo($x-gap-between-logos, 0);
+      top: $y-gap-between-logos;
+      left: $logo-size + 2 * $x-gap-between-logos;
     }
 
     #eight {
-      @include splash-logo(-300px, 120px);
+      @include splash-logo(-($x-gap-between-logos + $logo-size), $y-gap-between-logos);
+      top: 2 * $y-gap-between-logos;
+      left: 0;
     }
 
     #nine {
-      @include splash-logo(-100px, 120px);
+      @include splash-logo(-$logo-size, $y-gap-between-logos);
+      top: 2 * $y-gap-between-logos;
+      left: $x-gap-between-logos;
     }
 
     #ten {
-      @include splash-logo(100px, 120px);
+      @include splash-logo($logo-size, $y-gap-between-logos);
+      top: 2 * $y-gap-between-logos;
+      left: 2 * $x-gap-between-logos;
     }
 
     #eleven {
-      @include splash-logo(300px, 120px);
+      @include splash-logo($x-gap-between-logos + $logo-size, $y-gap-between-logos);
+      top: 2 * $y-gap-between-logos;
+      left: 3 * $x-gap-between-logos;
     }
-  }
-}
-
-@keyframes splash {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(var(--x), var(--y));
   }
 }

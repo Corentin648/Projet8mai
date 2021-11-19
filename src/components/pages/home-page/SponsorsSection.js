@@ -6,6 +6,7 @@ import logo_direct_batteries from '../../../assets/sponsors/logo_direct_batterie
 import logo_groupe_odis from '../../../assets/sponsors/logo_groupe_odis.png';
 import logo_lavie_auto from '../../../assets/sponsors/logo_lavie_auto.png';
 import logo_musee_blindes from '../../../assets/sponsors/logo_musee_blindes.png';
+import logo_nuit_erdre from '../../../assets/sponsors/logo_nuit_erdre.png';
 import logo_nuit_liberte from '../../../assets/sponsors/logo_nuit_liberte.png';
 
 
@@ -49,39 +50,38 @@ export default class SponsorsSection extends Component {
                     style={{position: "absolute", left: "0", width: "100%"}}/></h1>
 
                 <div className={"sponsors-container"}>
-                    <div id={"one"} className={"sponsor"} style={{position: "absolute", top: "0", left: "0"}}>
+                    <div id={"one"} className={"sponsor"}>
                         <img className={"logo-sponsor"} src={logo_baglione} alt=""/>
                     </div>
-                    <div id={"two"} className={"sponsor"} style={{position: "absolute", top: "0", left: "200px"}}>
+                    <div id={"two"} className={"sponsor"}>
                         <img className={"logo-sponsor"} src={logo_musee_blindes} alt=""/>
                     </div>
-                    <div id={"three"} className={"sponsor"} style={{position: "absolute", top: "0", left: "400px"}}>
+                    <div id={"three"} className={"sponsor"}>
                         <img className={"logo-sponsor"} src={logo_direct_batteries} alt=""/>
                     </div>
-                    <div id={"four"} className={"sponsor"} style={{position: "absolute", top: "0", left: "600px"}}>
+                    <div id={"four"} className={"sponsor"}>
                         <img className={"logo-sponsor"} src={logo_lavie_auto} alt=""/>
                     </div>
-                    <div id={"five"} className={"sponsor"} style={{position: "absolute", top: "120px", left: "100px"}}>
+                    <div id={"five"} className={"sponsor"}>
                         <img className={"logo-sponsor"} src={logo_nuit_liberte} alt=""/>
                     </div>
-                    <div id={"six"} className={"sponsor"} style={{position: "absolute", top: "120px", left: "300px"}}>
+                    <div id={"six"} className={"sponsor"}>
                         <img className={"logo-sponsor"} src={logo_commune_casson} alt=""/>
                     </div>
-                    <div id={"seven"} className={"sponsor"} style={{position: "absolute", top: "120px", left: "500px"}}>
+                    <div id={"seven"} className={"sponsor"}>
                         <img className={"logo-sponsor"} src={logo_groupe_odis} alt=""/>
                     </div>
-                    <div id={"eight"} className={"sponsor"} style={{position: "absolute", top: "240px", left: "0"}}>
-                        <img className={"logo-sponsor"} src="https://via.placeholder.com/100" alt=""/>
+                    <div id={"eight"} className={"sponsor"}>
+                        <img className={"logo-sponsor"} src={logo_musee_blindes} alt=""/>
                     </div>
-                    <div id={"nine"} className={"sponsor"} style={{position: "absolute", top: "240px", left: "200px"}}>
-                        <img className={"logo-sponsor"} src="https://via.placeholder.com/100" alt=""/>
+                    <div id={"nine"} className={"sponsor"}>
+                        <img className={"logo-sponsor"} src={logo_nuit_erdre} alt=""/>
                     </div>
-                    <div id={"ten"} className={"sponsor"} style={{position: "absolute", top: "240px", left: "400px"}}>
-                        <img className={"logo-sponsor"} src="https://via.placeholder.com/100" alt=""/>
+                    <div id={"ten"} className={"sponsor"}>
+                        <img className={"logo-sponsor"} src={logo_nuit_erdre} alt=""/>
                     </div>
-                    <div id={"eleven"} className={"sponsor"}
-                         style={{position: "absolute", top: "240px", left: "600px"}}>
-                        <img className={"logo-sponsor"} src="https://via.placeholder.com/100" alt=""/>
+                    <div id={"eleven"} className={"sponsor"}>
+                        <img className={"logo-sponsor"} src={logo_musee_blindes} alt=""/>
                     </div>
 
                 </div>
