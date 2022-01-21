@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import utils from '../../../utils.js';
 import '../../styles/home-page/CardsSection.scss';
 import photo1 from "../../../assets/cheval_sidecar_480x320.jpg";
 import photo2 from "../../../assets/foule_chateau_480x320.jpg";
@@ -11,19 +12,11 @@ export default class CardsSection extends Component {
         function estimateAllCardsBodyClass() {
             const elements = document.querySelectorAll('.card-body');
 
-            function isInViewport(element) {
-                const rect = element.getBoundingClientRect();
-                return ((
-                    ((rect.top >= 0 && rect.top <= (window.innerHeight || document.documentElement.clientHeight)) || rect.top <= 0) &&
-                    ((rect.left >= 0 && rect.left <= (window.innerWidth || document.documentElement.clientWidth)) || rect.left <= 0)
-                ));
-            }
-
             elements.forEach((el) => {
-                if (isInViewport(el)
+                if (utils.isInViewport(el)
                     && !(el.classList.value.includes("card-body slide-to-center"))) {
                     el.classList.value = "card-body slide-to-center";
-                } else if (!isInViewport(el)) {
+                } else if (!utils.isInViewport(el)) {
                     el.classList.value = "card-body";
                 }
             });
