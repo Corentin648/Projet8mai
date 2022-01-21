@@ -50,8 +50,8 @@ $y-gap-between-logos: $logo-size + $rows-gap;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    width: 700px;
-    height: 340px;
+    width: 4*$logo-size + 3*$columns-gap;
+    height: 3*$logo-size + 2*$columns-gap;
 
     .sponsor {
       display: none;
@@ -125,4 +125,83 @@ $y-gap-between-logos: $logo-size + $rows-gap;
       left: 3 * $x-gap-between-logos;
     }
   }
+}
+
+@media screen and (max-width: 750px) {
+  #sponsors-section {
+
+    .sponsors-container {
+      width: 2*$logo-size + $columns-gap;
+      height: 7*$logo-size + 6*$columns-gap;
+    }
+
+    .sponsors-container.splash {
+      #one {
+        @include splash-logo(-$logo-size, -3*$y-gap-between-logos);
+        top: 0;
+        left: 0;
+      }
+
+      #two {
+        @include splash-logo($logo-size, -3*$y-gap-between-logos);
+        top: 0;
+        left: $x-gap-between-logos;
+      }
+
+      #three {
+        @include splash-logo(0, -2*$y-gap-between-logos);
+        top: $y-gap-between-logos;
+        left: $logo-size;
+      }
+
+      #four {
+        @include splash-logo(-$logo-size, -$y-gap-between-logos);
+        top: 2*$y-gap-between-logos;
+        left: 0;
+      }
+
+      #five {
+        @include splash-logo($logo-size, -$y-gap-between-logos);
+        top: 2*$y-gap-between-logos;
+        left: $x-gap-between-logos;
+      }
+
+      #six {
+        @include splash-logo(0, 0);
+        top: 3*$y-gap-between-logos;
+        left: $logo-size;
+      }
+
+      #seven {
+        @include splash-logo(-$logo-size, $y-gap-between-logos);
+        top: 4*$y-gap-between-logos;
+        left: 0;
+      }
+
+      #eight {
+        @include splash-logo($logo-size, $y-gap-between-logos);
+        top: 4*$y-gap-between-logos;
+        left: $x-gap-between-logos;
+      }
+
+      #nine {
+        @include splash-logo(0, 2*$y-gap-between-logos);
+        top: 5*$y-gap-between-logos;
+        left: $logo-size;
+      }
+
+      #ten {
+        @include splash-logo(-$logo-size, 3*$y-gap-between-logos);
+        top: 6 * $y-gap-between-logos;
+        left: 0;
+      }
+
+      #eleven {
+        @include splash-logo($logo-size, 3*$y-gap-between-logos);
+        top: 6 * $y-gap-between-logos;
+        left: $x-gap-between-logos;
+      }
+    }
+  }
+
 }
