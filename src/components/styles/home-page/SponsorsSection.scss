@@ -51,7 +51,7 @@ $y-gap-between-logos: $logo-size + $rows-gap;
     margin-right: auto;
     position: relative;
     width: 4*$logo-size + 3*$columns-gap;
-    height: 3*$logo-size + 2*$columns-gap;
+    height: 3*$logo-size + 2*$rows-gap;
 
     .sponsor {
       display: none;
@@ -132,7 +132,7 @@ $y-gap-between-logos: $logo-size + $rows-gap;
 
     .sponsors-container {
       width: 2*$logo-size + $columns-gap;
-      height: 7*$logo-size + 6*$columns-gap;
+      height: 7*$logo-size + 6*$rows-gap;
     }
 
     .sponsors-container.splash {
