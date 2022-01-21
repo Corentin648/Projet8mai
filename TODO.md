@@ -9,10 +9,13 @@
 * [ ] onglet actif localstorage
 * [ ] scroll pas smooth pour appareil Apple
 * [ ] ajouter les prérequis dans le README.md
+* [ ] améliorer la qualité des images Sponsors
+*
 
 ## Prochaines features
 
-* ### Section sponsors, page d'accueil
 * ### Page Historique à remplir
+* ### Ajouter les programmes
+* ### Page des mentions légales
 * ### ... la suite à venir
 

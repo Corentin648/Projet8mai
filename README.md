@@ -5,7 +5,23 @@ et en particulier leur évènement annuel du **8 Mai à Casson**.
 
 ## Prérequis
 
-incoming...
+### Installer un logiciel pour programmer
+
+Il y a plusieurs logiciels performants permettant de développer des applications web. <br/>
+Dans notre cas, le plus simple est d'utiliser un IDE adapté contenant déjà tous les outils nécessaires à la
+programmation de notre site. <br/>
+
+Nous pouvons par exemple utilser un logiciel de la suite **JetBrains** comme **WebStorm** qui est gratuit. Pour
+l'installer, on peut suivre le tutoriel suivant : <br/>
+[https://www.jetbrains.com/help/webstorm/installation-guide.html#toolbox](https://www.jetbrains.com/help/webstorm/installation-guide.html#toolbox)
+.
+
+### Installer les paquets nécessaires au développement de l'application
+
+- nvm
+- npm
+
+*la suite à venir...*
 
 ## Tester le projet
 
