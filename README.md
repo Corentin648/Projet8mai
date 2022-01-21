@@ -52,3 +52,14 @@ npm run build
 ```
 
 Le build se trouve alors dans le répertoire `/build` depuis la racine du projet.
+
+### Placer le build sur un serveur à distance
+
+Pour un serveur **Apache 2**, il suffit de placer le `/build` dans le répertoire de déploiement du serveur. <br/>
+Nous utiliserons ici `/var/html/www`, répertoire de déploiement par défaut. Ainsi, on peut utilisr la commande
+suivante :
+
+```
+# Placer le projet sur un serveur
+sudo scp -r /chemin/absolu/du/build root@ipduserveur:/var/www/html
+```

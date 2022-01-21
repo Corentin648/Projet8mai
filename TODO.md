@@ -10,7 +10,7 @@
 * [ ] scroll pas smooth pour appareil Apple
 * [ ] ajouter les prérequis dans le README.md
 * [ ] améliorer la qualité des images Sponsors
-*
+* [ ] faire un HTTPS
 
 ## Prochaines features
 
