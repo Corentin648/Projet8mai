@@ -57,7 +57,8 @@ export default class CardsSection extends Component {
                             <h3 className={"default-title"}>Casson 2022</h3>
                             <hr/>
                             <div className={"pitch-content"}>
-                                Les amoureux de véhicules de l’association PVA travaillent actuellement sur l’organise
+                                Les amoureux de véhicules de l’association PVA travaillent actuellement sur
+                                l’organisation
                                 de la
                                 4 e édition de la reconstitution d’un camp américain. Il prendra place, les <span
                                 style={{fontWeight: "bold"}}>7, 8 et 9 Mai 2022</span>
