@@ -9,8 +9,13 @@
 * [ ] onglet actif localstorage
 * [ ] scroll pas smooth pour appareil Apple
 * [ ] ajouter les prérequis dans le README.md
-* [ ] améliorer la qualité des images Sponsors
+* [x] améliorer la qualité des images Sponsors
 * [x] faire un HTTPS
+
+## Questionnements
+
+* passer les sponsors en images vectorielles ?
+* faire les sponsors plus grands pour les grands écrans ?
 
 ## Prochaines features
 
