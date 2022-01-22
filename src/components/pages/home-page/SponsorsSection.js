@@ -9,7 +9,7 @@ import logo_erdre_gevres from '../../../assets/sponsors/logo_erdre_gevres.jpg';
 import logo_musee_blindes from '../../../assets/sponsors/logo_musee_blindes.png';
 import logo_nuit_liberte from '../../../assets/sponsors/logo_nuit_liberte.png';
 import logo_nuits_erdre from '../../../assets/sponsors/logo_nuits_erdre.jpg';
-import logo_eric_david from '../../../assets/sponsors/logo_eric_david.jpg';
+import logo_eric_david from '../../../assets/sponsors/logo_eric_david.png';
 import logo_ramonage from '../../../assets/sponsors/logo_ramonage.jpg';
 import logo_pubouest from '../../../assets/sponsors/logo_pubouest.jpg';
 
