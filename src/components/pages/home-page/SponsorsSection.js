@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 import utils from '../../../utils.js';
 import '../../styles/home-page/SponsorsSection.scss';
-import logo_orbello from '../../../assets/sponsors/logo_orbello.jpg';
+import logo_orbello from '../../../assets/sponsors/logo_orbello.png';
 import logo_commune_casson from '../../../assets/sponsors/logo_commune_casson.png';
 import logo_direct_batteries from '../../../assets/sponsors/logo_direct_batteries.png';
 import logo_groupe_odis from '../../../assets/sponsors/logo_groupe_odis.png';
-import logo_erdre_gevres from '../../../assets/sponsors/logo_erdre_gevres.jpg';
+import logo_erdre_gevres from '../../../assets/sponsors/logo_erdre_gevres.png';
 import logo_musee_blindes from '../../../assets/sponsors/logo_musee_blindes.png';
 import logo_nuit_liberte from '../../../assets/sponsors/logo_nuit_liberte.png';
-import logo_nuits_erdre from '../../../assets/sponsors/logo_nuits_erdre.jpg';
+import logo_nuits_erdre from '../../../assets/sponsors/logo_nuit_erdre.png';
 import logo_eric_david from '../../../assets/sponsors/logo_eric_david.png';
-import logo_ramonage from '../../../assets/sponsors/logo_ramonage.jpg';
-import logo_pubouest from '../../../assets/sponsors/logo_pubouest.jpg';
+import logo_ramonage from '../../../assets/sponsors/logo_ramonage.png';
+import logo_pubouest from '../../../assets/sponsors/logo_pubouest.png';
 
 
 export default class SponsorsSection extends Component {
@@ -50,7 +50,7 @@ export default class SponsorsSection extends Component {
                         <img className={"logo-sponsor"} src={logo_orbello} alt=""/>
                     </div>
                     <div id={"two"} className={"sponsor"}>
-                        <img className={"logo-sponsor"} src={logo_ramonage} alt=""/>
+                        <img className={"logo-sponsor"} src={logo_groupe_odis} alt=""/>
                     </div>
                     <div id={"three"} className={"sponsor"}>
                         <img className={"logo-sponsor"} src={logo_direct_batteries} alt=""/>
@@ -65,7 +65,7 @@ export default class SponsorsSection extends Component {
                         <img className={"logo-sponsor"} src={logo_commune_casson} alt=""/>
                     </div>
                     <div id={"seven"} className={"sponsor"}>
-                        <img className={"logo-sponsor"} src={logo_groupe_odis} alt=""/>
+                        <img className={"logo-sponsor"} src={logo_ramonage} alt=""/>
                     </div>
                     <div id={"eight"} className={"sponsor"}>
                         <img className={"logo-sponsor"} src={logo_nuits_erdre} alt=""/>
