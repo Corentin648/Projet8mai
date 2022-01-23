@@ -21,8 +21,12 @@ export default class HomePage extends Component {
                     backgroundHeight: Math.max(window.visualViewport.height, presentationPanel.offsetHeight + 120)
                 });
             } else {
+                /* For little screens, we need to check if toggle is open
+                * because if it is actually the case, the panel doesn't exist and its offsetheight is 0 */
+                let x = document.getElementById("myTopNav");
+                const expandTabs = x.className.includes("expand-tabs");
                 this.setState({
-                    backgroundHeight: presentationPanel.offsetHeight + 85
+                    backgroundHeight: expandTabs ? this.state.backgroundHeight : presentationPanel.offsetHeight + 85
                 });
             }
         }

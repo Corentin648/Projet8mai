@@ -31,6 +31,7 @@ class TopBar extends Component {
         let x = document.getElementById("myTopNav");
         const expandTabs = x.className.includes("expand-tabs");
         this.hideShowAll(!expandTabs); // avoid unwanted scrolling when tabs expanded
+        window.scrollTo({top: 0, behavior: 'smooth'});
         this.setState({
             toggleClick: expandTabs ? "" : "expand-tabs"
         });
