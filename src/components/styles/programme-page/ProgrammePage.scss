@@ -1,0 +1,46 @@
+@import '../index.scss';
+
+#programme-section {
+  width: 100%;
+  height: max-content;
+  background-color: $background-color;
+}
+
+.programme-container {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#programme-title {
+  position: relative;
+  width: max-content;
+  white-space: normal;
+  margin-bottom: 50px;
+}
+
+#programme-exposants-content {
+  @include image-scaling(#programme-exposants-container, #programme-exposants-image, 500px, 1.4141);
+
+  #programme-exposants-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+@media screen and (max-width: 750px) {
+  #programme-section {
+    height: 100vh;
+  }
+
+  #programme-title {
+    position: relative;
+    width: unset;
+    white-space: normal;
+  }
+
+  #programme-exposants-content {
+    @include image-scaling(#programme-exposants-container, #programme-exposants-image, 100%, 1.4141);
+  }
+}

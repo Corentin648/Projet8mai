@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import '../../styles/programme-page/ProgrammePage.scss';
+import programme_exposant from "../../../assets/programmes/programme_exposant_image.png";
 
 export default class ProgrammePage extends Component {
 
     componentDidMount() {
-        const element = document.getElementById("contact-section");
+        const element = document.getElementById("programme-section");
         const y = element.getBoundingClientRect().top + window.pageYOffset;
 
         window.scrollTo({top: y, behavior: 'smooth'});
@@ -12,18 +13,15 @@ export default class ProgrammePage extends Component {
 
     render() {
         return (
-            <section id={"contact-section"}>
+            <section id={"programme-section"}>
                 <div className={"zero-padding"}/>
-                <div id={"contact-container"}>
-                    <h1 id={"contact-title"} className={"default-title"}>Contact <hr
-                        style={{position: "absolute", left: "0", width: "200%"}}/></h1>
-                    <div id={"contact-content"}>
-                        <h3 style={{textAlign: "center"}}>Association Patrimoine Véhicules Anciens</h3> <br/>
-                        <span id={"contact-text"}>
-                            247 L’Hivernière – CASSON <br/>
-                            yann.casson@hotmail.fr <br/>
-                            07.85.54.63.92
-                        </span>
+                <div className={"programme-container"} id={"programme-exposants-container"}>
+                    <h1 id={"programme-title"} className={"default-title"}>Programme exposants <hr
+                        style={{position: "absolute", left: "0", width: "100%"}}/></h1>
+                    <div id={"programme-exposants-content"}>
+                        <div id={"programme-exposants-container"}>
+                            <img id={"programme-exposants-image"} src={programme_exposant} alt=""/>
+                        </div>
                     </div>
                 </div>
             </section>
