@@ -24,7 +24,7 @@ class App extends Component {
         }
     }
 
-    /* Allows to keep active tab info while refreshing page */
+    /* Allows keeping active tab info while refreshing page */
     saveStateToLocalStorage = () => {
         localStorage.setItem('state', JSON.stringify(this.state));
     }
@@ -55,9 +55,9 @@ class App extends Component {
                     <TopBar setActiveTab={this.setActiveTab} activeTab={this.state.activeTab}/>
 
                     <Switch>
-                        <Route exact path={"/"} component={() => <HomePage carRef={this.carRef}/>}/>
-                        <Route path={"/historique"} component={Historique}/>
-                        <Route path={"/contact"} component={ContactPage}/>
+                        <Route exact path={"/"} component={() => <HomePage/>}/>
+                        <Route path={"/historique"} component={() => <Historique/>}/>
+                        <Route path={"/contact"} component={() => <ContactPage/>}/>
                         <Route path={"/"} component={() => <div>The page doesn't exist</div>}/>
                     </Switch>
 

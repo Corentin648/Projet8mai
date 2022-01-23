@@ -11,6 +11,17 @@ class TopBar extends Component {
         }
     }
 
+    /* Hide or show all content except TopBar */
+    hideShowAll = (hide) => {
+        const elements = document.body.querySelectorAll(".App > *");
+        const inputList = Array.prototype.slice.call(elements);
+        for (let i = 0; i < inputList.length; i++) {
+            if (!(inputList[i].id === "myTopNav")) {
+                hide ? inputList[i].style.display = "none" : inputList[i].style.display = "block";
+            }
+        }
+    }
+
     setActiveTabAndHandleDropdownTab = (tab) => {
         this.handleOnClickDropdownTab();
         this.props.setActiveTab(tab);
@@ -18,8 +29,10 @@ class TopBar extends Component {
 
     handleOnClickToggle = () => {
         let x = document.getElementById("myTopNav");
+        const expandTabs = x.className.includes("expand-tabs");
+        this.hideShowAll(!expandTabs); // avoid unwanted scrolling when tabs expanded
         this.setState({
-            toggleClick: x.className.includes("expand-tabs") ? "" : "expand-tabs"
+            toggleClick: expandTabs ? "" : "expand-tabs"
         });
 
     }
@@ -53,8 +66,8 @@ class TopBar extends Component {
     }
 
     render() {
-        const appTopBar = (
-            <div className={"navbar " + this.state.toggleClick} id="myTopNav" ref={this.props.carRef}>
+        return (
+            <section className={"navbar " + this.state.toggleClick} id="myTopNav">
                 <Link id="HomeTab" to="/"
                       onClick={() => this.setActiveTabAndHandleDropdownTab(document.getElementById("HomeTab"))}>Accueil</Link>
                 <Link className="dropdown" id="CassonTab" to="/"
@@ -86,10 +99,8 @@ class TopBar extends Component {
                     </Link>
                 </div>
 
-            </div>
-        )
-
-        return (<div>{appTopBar}</div>);
+            </section>
+        );
     }
 }
 
