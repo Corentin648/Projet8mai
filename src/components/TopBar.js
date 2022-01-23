@@ -22,6 +22,15 @@ class TopBar extends Component {
         }
     }
 
+    /* Allows displaying everything back if screen is resized over 750px and toggle is still open */
+    handleResize = () => {
+        let x = document.getElementById("myTopNav");
+        const expandTabs = x.className.includes("expand-tabs");
+        if (window.screen.width > 750 && expandTabs) {
+            this.hideShowAll(!expandTabs);
+        }
+    }
+
     setActiveTabAndHandleDropdownTab = (tab) => {
         this.handleOnClickDropdownTab();
         this.props.setActiveTab(tab);
@@ -30,8 +39,9 @@ class TopBar extends Component {
     handleOnClickToggle = () => {
         let x = document.getElementById("myTopNav");
         const expandTabs = x.className.includes("expand-tabs");
-        this.hideShowAll(!expandTabs); // avoid unwanted scrolling when tabs expanded
-        window.scrollTo({top: 0, behavior: 'smooth'});
+        if (window.screen.width < 750) {
+            this.hideShowAll(!expandTabs); // avoid unwanted scrolling when tabs expanded
+        }
         this.setState({
             toggleClick: expandTabs ? "" : "expand-tabs"
         });
@@ -47,15 +57,15 @@ class TopBar extends Component {
     }
 
     handleGoToCard = (cardId) => {
+        /* Means that we need to close toggle if it's open */
+        this.handleOnClickToggle();
+
         const element = document.querySelector(cardId);
 
         if (element !== null) {
             const y = element.getBoundingClientRect().top + window.pageYOffset;
 
             window.scrollTo({top: y - 105, behavior: 'smooth'});
-
-            // À VOIR ; peut poser problème si la taille d'écran change en cours de route
-            this.handleOnClickToggle();
         }
     }
 
@@ -64,6 +74,8 @@ class TopBar extends Component {
         if (activeComponent !== null) {
             activeComponent.classList.add("active");
         }
+
+        window.addEventListener('resize', () => this.handleResize());
     }
 
     render() {
@@ -77,8 +89,9 @@ class TopBar extends Component {
                     <i style={{paddingLeft: "15px"}} className="fa fa-caret-down"/>
                     <div
                         className="dropdown-content">
-                        <Link id="ProgrammeTab" to="/programme"
-                              onClick={() => this.setActiveTabAndHandleDropdownTab(document.getElementById("ProgrammeTab"))}>Programme</Link>
+                        <a id="ProgrammeTab" href="/" onClick={() => window.location.reload()}>Programme</a>
+                        {/*<Link id="ProgrammeTab" to="/programme"
+                              onClick={() => this.setActiveTabAndHandleDropdownTab(document.getElementById("ProgrammeTab"))}>Programme</Link>*/}
                         <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
                         <a id="BaladeTab" href="/" onClick={() => window.location.reload()}>Balade</a>
                         <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
