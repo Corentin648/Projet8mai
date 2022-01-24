@@ -51,7 +51,7 @@ $y-gap-between-logos: $logo-size + $rows-gap;
     margin-right: auto;
     position: relative;
     width: 4*$logo-size + 3*$columns-gap;
-    height: 3*$logo-size + 2*$rows-gap;
+    height: 4*$logo-size + 3*$rows-gap;
 
     .sponsor {
       display: none;
@@ -124,6 +124,24 @@ $y-gap-between-logos: $logo-size + $rows-gap;
       top: 2 * $y-gap-between-logos;
       left: 3 * $x-gap-between-logos;
     }
+
+    #twelve {
+      @include splash-logo(-$x-gap-between-logos, 2 * $y-gap-between-logos);
+      top: 3 * $y-gap-between-logos;
+      left: $logo-size;
+    }
+
+    #thirteen {
+      @include splash-logo(0, 2 * $y-gap-between-logos);
+      top: 3 * $y-gap-between-logos;
+      left: $logo-size + $x-gap-between-logos;
+    }
+
+    #fourteen {
+      @include splash-logo($x-gap-between-logos, 2 * $y-gap-between-logos);
+      top: 3 * $y-gap-between-logos;
+      left: $logo-size + 2 * $x-gap-between-logos;
+    }
   }
 }
 
@@ -132,7 +150,7 @@ $y-gap-between-logos: $logo-size + $rows-gap;
 
     .sponsors-container {
       width: 2*$logo-size + $columns-gap;
-      height: 7*$logo-size + 6*$rows-gap;
+      height: 9*$logo-size + 8*$rows-gap;
     }
 
     .sponsors-container.splash {
@@ -199,6 +217,24 @@ $y-gap-between-logos: $logo-size + $rows-gap;
       #eleven {
         @include splash-logo($logo-size, 3*$y-gap-between-logos);
         top: 6 * $y-gap-between-logos;
+        left: $x-gap-between-logos;
+      }
+
+      #twelve {
+        @include splash-logo(0, 4*$y-gap-between-logos);
+        top: 7*$y-gap-between-logos;
+        left: $logo-size;
+      }
+
+      #thirteen {
+        @include splash-logo(-$logo-size, 5*$y-gap-between-logos);
+        top: 8 * $y-gap-between-logos;
+        left: 0;
+      }
+
+      #fourteen {
+        @include splash-logo($logo-size, 5*$y-gap-between-logos);
+        top: 8 * $y-gap-between-logos;
         left: $x-gap-between-logos;
       }
     }

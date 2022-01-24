@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Historique.scss';
+import '../../styles/historique-page/Historique.scss';
 
 
 class Historique extends Component {

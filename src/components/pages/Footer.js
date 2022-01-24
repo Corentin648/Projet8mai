@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import './Footer.scss';
+import '../styles/Footer.scss';
 import {Link, withRouter} from "react-router-dom";
-import logo_pva_monochrome from "../assets/logo_pva_monochrome.png";
-import logo_pva from "../assets/logo_pva.png";
+import logo_pva_monochrome from "../../assets/logo_pva_monochrome.png";
+import logo_pva from "../../assets/logo_pva.png";
 
 class Footer extends Component {
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import PresentationSection from './home-page/PresentationSection';
-import CardsSection from "./home-page/CardsSection";
-import SponsorsSection from "./home-page/SponsorsSection";
+import PresentationSection from './PresentationSection';
+import CardsSection from "./CardsSection";
+import SponsorsSection from "./SponsorsSection";
 
 export default class HomePage extends Component {
 

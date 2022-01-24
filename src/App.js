@@ -1,9 +1,9 @@
 import './App.scss';
 import {HashRouter, Route, Switch} from "react-router-dom";
-import TopBar from "./components/TopBar";
-import Footer from "./components/Footer";
-import HomePage from "./components/pages/HomePage";
-import Historique from "./components/Historique";
+import TopBar from "./components/pages/TopBar";
+import Footer from "./components/pages/Footer";
+import HomePage from "./components/pages/home-page/HomePage";
+import Historique from "./components/pages/historique-page/Historique";
 import ContactPage from "./components/pages/contact-page/ContactPage";
 import React, {Component} from 'react';
 

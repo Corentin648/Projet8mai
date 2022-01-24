@@ -7,11 +7,12 @@
 * [x] ajouter un titre topbar pour petits écrans
 * [x] logo pva flou pour footer
 * [x] onglet actif localstorage
-* [ ] scroll pas smooth pour appareil Apple
+* [ ] scroll pas smooth pour appareil Apple (`npm smoothscroll-polyfill` ??)
 * [ ] ajouter les prérequis dans le README.md
 * [x] améliorer la qualité des images Sponsors
 * [x] faire un HTTPS
 * [x] masquer le contenu du site quand toggle ouvert (éviter le scroll en arrière plan)
+* [ ] trouver un moyen plus économique pour upload un nouveau `build` sur le serveur
 
 ## Questionnements
 

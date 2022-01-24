@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './TopBar.scss';
+import '../styles/TopBar.scss';
 import {Link, withRouter} from "react-router-dom";
 
 class TopBar extends Component {

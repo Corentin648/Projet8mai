@@ -8,11 +8,13 @@ import logo_groupe_odis from '../../../assets/sponsors/logo_groupe_odis.png';
 import logo_erdre_gevres from '../../../assets/sponsors/logo_erdre_gevres.png';
 import logo_musee_blindes from '../../../assets/sponsors/logo_musee_blindes.png';
 import logo_nuit_liberte from '../../../assets/sponsors/logo_nuit_liberte.png';
-import logo_nuits_erdre from '../../../assets/sponsors/logo_nuit_erdre.png';
+import logo_nuits_erdre from '../../../assets/sponsors/logo_nuit_erdre.jpeg';
 import logo_eric_david from '../../../assets/sponsors/logo_eric_david.png';
 import logo_ramonage from '../../../assets/sponsors/logo_ramonage.png';
 import logo_pubouest from '../../../assets/sponsors/logo_pubouest.png';
-
+import logo_abs_auto from '../../../assets/sponsors/logo_abs_auto.png';
+import logo_u from '../../../assets/sponsors/logo_u.png';
+import logo_nord_sur_erdre from '../../../assets/sponsors/logo_nord_sur_erdre.png';
 
 export default class SponsorsSection extends Component {
 
@@ -78,6 +80,15 @@ export default class SponsorsSection extends Component {
                     </div>
                     <div id={"eleven"} className={"sponsor"}>
                         <img className={"logo-sponsor"} src={logo_musee_blindes} alt=""/>
+                    </div>
+                    <div id={"twelve"} className={"sponsor"}>
+                        <img className={"logo-sponsor"} src={logo_abs_auto} alt=""/>
+                    </div>
+                    <div id={"thirteen"} className={"sponsor"}>
+                        <img className={"logo-sponsor"} src={logo_u} alt=""/>
+                    </div>
+                    <div id={"fourteen"} className={"sponsor"}>
+                        <img className={"logo-sponsor"} src={logo_nord_sur_erdre} alt=""/>
                     </div>
 
                 </div>

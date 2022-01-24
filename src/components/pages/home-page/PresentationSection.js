@@ -3,6 +3,7 @@ import '../../styles/home-page/PresentationSection.scss';
 import background from "../../../assets/IMG_3608.jpg";
 import background2 from "../../../assets/IMG_3628.jpg";
 import logo_pva from "../../../assets/logo_pva.png";
+import fiche_inscription from "../../../assets/fiche_inscription_casson_2022.pdf";
 
 export default class PresentationSection extends Component {
 
@@ -58,7 +59,7 @@ export default class PresentationSection extends Component {
                         <h2 id="casson-countdown">Casson J - {this.state.countDown}</h2>
 
                         <a id={"inscription-form-button"}
-                           href={process.env.PUBLIC_URL + "/fiche_inscription_casson_2022.pdf"}
+                           href={fiche_inscription}
                            target="_blank"
                            rel="noreferrer" download>
                             Formulaire d'inscription pour exposants
