@@ -5,6 +5,7 @@ import Footer from "./components/pages/Footer";
 import HomePage from "./components/pages/home-page/HomePage";
 import Historique from "./components/pages/historique-page/Historique";
 import ContactPage from "./components/pages/contact-page/ContactPage";
+import ProgrammePage from "./components/pages/programme-page/ProgrammePage";
 import React, {Component} from 'react';
 
 
@@ -58,7 +59,7 @@ class App extends Component {
                         <Route exact path={"/"} component={() => <HomePage/>}/>
                         <Route path={"/historique"} component={() => <Historique/>}/>
                         <Route path={"/contact"} component={() => <ContactPage/>}/>
-                        {/*<Route path={"/programme"} component={() => <ProgrammePage/>}/>*/}
+                        <Route path={"/programme"} component={() => <ProgrammePage/>}/>
                         <Route path={"/"} component={() => <div>The page doesn't exist</div>}/>
                     </Switch>
 

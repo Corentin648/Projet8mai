@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import '../../styles/programme-page/ProgrammePage.scss';
 import programme_exposant from "../../../assets/programmes/programme_exposant_image.png";
+import programme_visiteur from "../../../assets/programmes/programme_visiteur_image.png";
+import pdf_exposant from "../../../assets/programmes/programme_exposant.pdf";
+import pdf_visiteur from "../../../assets/programmes/programme_visiteur.pdf";
 
 export default class ProgrammePage extends Component {
 
@@ -16,14 +19,35 @@ export default class ProgrammePage extends Component {
             <section id={"programme-section"}>
                 <div className={"zero-padding"}/>
                 <div className={"programme-container"} id={"programme-exposants-container"}>
-                    <h1 id={"programme-title"} className={"default-title"}>Programme exposants <hr
+                    <h1 id={"programme-title"} className={"default-title"}>Programmes <hr
                         style={{position: "absolute", left: "0", width: "100%"}}/></h1>
-                    <div id={"programme-exposants-content"}>
-                        <div id={"programme-exposants-container"}>
-                            <img id={"programme-exposants-image"} src={programme_exposant} alt=""/>
+                    <div id={"programme-content"}>
+                        <div id={"programme-exposants-content"}>
+                            <div id={"programme-exposants-container"}>
+                                <img id={"programme-exposants-image"} src={programme_exposant} alt=""/>
+                            </div>
+                            <a id={"pdf-exposants"}
+                               href={pdf_exposant}
+                               target="_blank"
+                               rel="noreferrer" download>
+                                Télécharger le pdf
+                            </a>
+                        </div>
+                        <div id={"space-between-images"} className={"zero-padding"}/>
+                        <div id={"programme-visiteurs-content"}>
+                            <div id={"programme-visiteurs-container"}>
+                                <img id={"programme-visiteurs-image"} src={programme_visiteur} alt=""/>
+                            </div>
+                            <a id={"pdf-exposants"}
+                               href={pdf_visiteur}
+                               target="_blank"
+                               rel="noreferrer" download>
+                                Télécharger le pdf
+                            </a>
                         </div>
                     </div>
                 </div>
+                <div className={"zero-padding"}/>
             </section>
         );
     }

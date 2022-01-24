@@ -89,9 +89,9 @@ class TopBar extends Component {
                     <i style={{paddingLeft: "15px"}} className="fa fa-caret-down"/>
                     <div
                         className="dropdown-content">
-                        <a id="ProgrammeTab" href="/" onClick={() => window.location.reload()}>Programme</a>
-                        {/*<Link id="ProgrammeTab" to="/programme"
-                              onClick={() => this.setActiveTabAndHandleDropdownTab(document.getElementById("ProgrammeTab"))}>Programme</Link>*/}
+                        {/*<a id="ProgrammeTab" href="/" onClick={() => window.location.reload()}>Programme</a>*/}
+                        <Link id="ProgrammeTab" to="/programme"
+                              onClick={() => this.setActiveTabAndHandleDropdownTab(document.getElementById("ProgrammeTab"))}>Programme</Link>
                         <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
                         <a id="BaladeTab" href="/" onClick={() => window.location.reload()}>Balade</a>
                         <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
