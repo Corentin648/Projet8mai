@@ -8,10 +8,7 @@ import pdf_visiteur from "../../../assets/programmes/programme_visiteur.pdf";
 export default class ProgrammePage extends Component {
 
     componentDidMount() {
-        const element = document.getElementById("programme-section");
-        const y = element.getBoundingClientRect().top + window.pageYOffset;
-
-        window.scrollTo({top: y, behavior: 'smooth'});
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
     render() {
