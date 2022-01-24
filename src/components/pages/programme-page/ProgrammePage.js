@@ -18,15 +18,15 @@ export default class ProgrammePage extends Component {
         return (
             <section id={"programme-section"}>
                 <div className={"zero-padding"}/>
-                <div className={"programme-container"} id={"programme-exposants-container"}>
+                <div id={"programme-container"}>
                     <h1 id={"programme-title"} className={"default-title"}>Programmes <hr
-                        style={{position: "absolute", left: "0", width: "100%"}}/></h1>
+                        style={{position: "absolute", left: "0", width: "200%"}}/></h1>
                     <div id={"programme-content"}>
-                        <div id={"programme-exposants-content"}>
-                            <div id={"programme-exposants-container"}>
+                        <div>
+                            <div id={"programme-exposants-container"} style={{marginBottom: "10px"}}>
                                 <img id={"programme-exposants-image"} src={programme_exposant} alt=""/>
                             </div>
-                            <a id={"pdf-exposants"}
+                            <a className={"download-pdf"}
                                href={pdf_exposant}
                                target="_blank"
                                rel="noreferrer" download>
@@ -34,11 +34,11 @@ export default class ProgrammePage extends Component {
                             </a>
                         </div>
                         <div id={"space-between-images"} className={"zero-padding"}/>
-                        <div id={"programme-visiteurs-content"}>
-                            <div id={"programme-visiteurs-container"}>
+                        <div>
+                            <div id={"programme-visiteurs-container"} style={{marginBottom: "10px"}}>
                                 <img id={"programme-visiteurs-image"} src={programme_visiteur} alt=""/>
                             </div>
-                            <a id={"pdf-exposants"}
+                            <a className={"download-pdf"}
                                href={pdf_visiteur}
                                target="_blank"
                                rel="noreferrer" download>

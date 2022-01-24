@@ -6,69 +6,66 @@
   background-color: $background-color;
 }
 
-.programme-container {
+#programme-container {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-}
-
-#programme-title {
-  position: relative;
-  width: max-content;
-  white-space: normal;
-  margin-bottom: 50px;
-}
-
-#programme-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  @include image-scaling(#programme-exposants-container, #programme-exposants-image, 500px, 1.4141);
-  @include image-scaling(#programme-visiteurs-container, #programme-visiteurs-image, 500px, 1.4141);
-
-  #space-between-images {
-    display: none;
-  }
-
-}
-
-@media screen and (max-width: 1250px) {
 
   #programme-title {
     position: relative;
-    width: unset;
+    width: max-content;
     white-space: normal;
-  }
-
-  .programme-container {
-    width: 60%;
+    margin-bottom: 50px;
   }
 
   #programme-content {
     display: flex;
-    flex-direction: column;
-    @include image-scaling(#programme-exposants-container, #programme-exposants-image, 100%, 1.4141);
-    @include image-scaling(#programme-visiteurs-container, #programme-visiteurs-image, 100%, 1.4141);
+    flex-direction: row;
+    justify-content: space-around;
+    @include image-scaling(#programme-exposants-container, #programme-exposants-image, 500px, 1.4141);
+    @include image-scaling(#programme-visiteurs-container, #programme-visiteurs-image, 500px, 1.4141);
 
     #space-between-images {
-      display: block;
+      display: none;
     }
+  }
 
+}
+
+.download-pdf {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: $dark-green-text;
+
+  &:hover {
+    color: $yellow-text;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+
+  #programme-container {
+    width: 60%;
+
+    #programme-content {
+      display: flex;
+      flex-direction: column;
+      @include image-scaling(#programme-exposants-container, #programme-exposants-image, 100%, 1.4141);
+      @include image-scaling(#programme-visiteurs-container, #programme-visiteurs-image, 100%, 1.4141);
+
+      #space-between-images {
+        display: block;
+      }
+
+    }
   }
 }
 
 @media screen and (max-width: 750px) {
-  /*  #programme-section {
-      height: 100vh;
-    }*/
-
-  #programme-title {
-    position: relative;
-    width: unset;
-    white-space: normal;
-  }
-
-  .programme-container {
+  #programme-container {
     width: 90%;
   }
 }
