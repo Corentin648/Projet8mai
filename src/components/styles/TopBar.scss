@@ -95,6 +95,12 @@
     padding: 10px;
     text-align: left;
 
+    // Active tab
+    &.active {
+      background-color: $green-button-color;
+      color: $green-button-text;
+    }
+
     // Hover tab
     &:hover {
       @extend %navbar-tab-hover;
