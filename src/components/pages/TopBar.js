@@ -56,13 +56,15 @@ class TopBar extends Component {
         return this.state.toggleClick.includes("expand-tabs") ? "fa fa-times" : "fa fa-bars";
     }
 
-    handleGoToCard = (cardId) => {
+    handleGoToCard = (e, cardId, tabId) => {
         /* Means that we need to close toggle if it's open */
         this.handleOnClickToggle();
 
         const element = document.querySelector(cardId);
+        const tab = document.querySelector(tabId);
 
-        if (element !== null) {
+        /* Check if it's actually the dropdown main tab which has been clicked */
+        if (element !== null && tab !== null && tab.id === e.target.id) {
             const y = element.getBoundingClientRect().top + window.pageYOffset;
 
             window.scrollTo({top: y - 105, behavior: 'smooth'});
@@ -85,7 +87,7 @@ class TopBar extends Component {
                 <Link id="HomeTab" to="/"
                       onClick={() => this.handleOnClickTab(document.getElementById("HomeTab"))}>Accueil</Link>
                 <Link className="dropdown" id="CassonTab" to="/"
-                      onClick={() => this.handleGoToCard("#casson-card")}>
+                      onClick={(e) => this.handleGoToCard(e, "#casson-card", "#CassonTab")}>
                     Casson 2022
                     <i style={{paddingLeft: "15px"}} className="fa fa-caret-down"/>
                     <div
@@ -103,7 +105,7 @@ class TopBar extends Component {
                     </div>
                 </Link>
                 <Link id="HistoriqueTab" to="/"
-                      onClick={() => this.handleGoToCard("#history-card")}>Historique</Link>
+                      onClick={(e) => this.handleGoToCard(e, "#history-card", "#HistoriqueTab")}>Historique</Link>
                 <Link id="ContactTab" to="/contact"
                       onClick={() => this.handleOnClickTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
                 <div id={"navbar-header"}>
