@@ -31,29 +31,29 @@ class TopBar extends Component {
         }
     }
 
-    setActiveTabAndHandleDropdownTab = (tab) => {
-        this.handleOnClickDropdownTab();
+    handleOnClickTab = (tab) => {
+        /* Means that we need to close toggle if it's open */
+        this.handleOnClickToggle();
+        /* Need to set the active tab */
         this.props.setActiveTab(tab);
     }
 
     handleOnClickToggle = () => {
-        let x = document.getElementById("myTopNav");
-        const expandTabs = x.className.includes("expand-tabs");
         if (window.screen.width < 750) {
-            this.hideShowAll(!expandTabs); // avoid unwanted scrolling when tabs expanded
+            let x = document.getElementById("myTopNav");
+            const expandTabs = x.className.includes("expand-tabs");
+
+            this.hideShowAll(!expandTabs); // avoid unwanted background scrolling when tabs expanded
+
+            this.setState({
+                toggleClick: expandTabs ? "" : "expand-tabs"
+            });
         }
-        this.setState({
-            toggleClick: expandTabs ? "" : "expand-tabs"
-        });
 
     }
 
     toggleIcon = () => {
         return this.state.toggleClick.includes("expand-tabs") ? "fa fa-times" : "fa fa-bars";
-    }
-
-    handleOnClickDropdownTab = () => {
-        this.handleOnClickToggle();
     }
 
     handleGoToCard = (cardId) => {
@@ -70,6 +70,7 @@ class TopBar extends Component {
     }
 
     componentDidMount() {
+        /* Need to set the active tab */
         let activeComponent = document.getElementById(this.props.activeTab);
         if (activeComponent !== null) {
             activeComponent.classList.add("active");
@@ -82,16 +83,15 @@ class TopBar extends Component {
         return (
             <section className={"navbar " + this.state.toggleClick} id="myTopNav">
                 <Link id="HomeTab" to="/"
-                      onClick={() => this.setActiveTabAndHandleDropdownTab(document.getElementById("HomeTab"))}>Accueil</Link>
+                      onClick={() => this.handleOnClickTab(document.getElementById("HomeTab"))}>Accueil</Link>
                 <Link className="dropdown" id="CassonTab" to="/"
                       onClick={() => this.handleGoToCard("#casson-card")}>
                     Casson 2022
                     <i style={{paddingLeft: "15px"}} className="fa fa-caret-down"/>
                     <div
                         className="dropdown-content">
-                        {/*<a id="ProgrammeTab" href="/" onClick={() => window.location.reload()}>Programme</a>*/}
                         <Link id="ProgrammeTab" to="/programme"
-                              onClick={() => this.setActiveTabAndHandleDropdownTab(document.getElementById("ProgrammeTab"))}>Programme</Link>
+                              onClick={() => this.handleOnClickTab(document.getElementById("ProgrammeTab"))}>Programme</Link>
                         <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
                         <a id="BaladeTab" href="/" onClick={() => window.location.reload()}>Balade</a>
                         <hr style={{borderTop: "0px", color: "#ddd", padding: "0", margin: "0"}}/>
@@ -105,7 +105,7 @@ class TopBar extends Component {
                 <Link id="HistoriqueTab" to="/"
                       onClick={() => this.handleGoToCard("#history-card")}>Historique</Link>
                 <Link id="ContactTab" to="/contact"
-                      onClick={() => this.setActiveTabAndHandleDropdownTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
+                      onClick={() => this.handleOnClickTab(document.getElementById("ContactTab"))}>Contactez-nous</Link>
                 <div id={"navbar-header"}>
                     <h3 id={"asso-name"}>Patrimoine véhicules anciens</h3>
                     <Link to={this.props.location.pathname} id={"toggle"}
