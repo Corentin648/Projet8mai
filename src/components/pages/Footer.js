@@ -21,7 +21,7 @@ class Footer extends Component {
 
     render() {
         return (
-            <section style={{width: "100%"}}>
+            <section id={"footer"} style={{width: "100%"}}>
                 <div id={"content-container"}>
                     <div className={"footer-item"} id={"links-item"}>
                         <Link className={"link"} id={"contact-link"} to="/contact"
