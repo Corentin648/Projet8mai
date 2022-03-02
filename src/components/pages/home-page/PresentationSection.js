@@ -22,7 +22,7 @@ export default class PresentationSection extends Component {
     }
 
     calculateCountDown = () => {
-        const countDownDate = new Date("May 8, 2022 00:00:00").getTime();
+        const countDownDate = new Date("May 6, 2022 00:00:00").getTime();
         const now = new Date().getTime();
         const days = Math.floor((countDownDate - now) / (1000 * 60 * 60 * 24));
 

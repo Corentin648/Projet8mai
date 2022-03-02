@@ -61,7 +61,7 @@ export default class CardsSection extends Component {
                                 l’organisation
                                 de la
                                 4 e édition de la reconstitution d’un camp américain. Il prendra place, les <span
-                                style={{fontWeight: "bold"}}>7, 8 et 9 Mai 2022</span>
+                                style={{fontWeight: "bold"}}>6, 7 et 8 Mai 2022</span>
                                 , comme à son habitude, dans le parc du château du plessis à Casson.
                             </div>
                         </div>
